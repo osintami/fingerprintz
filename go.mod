@@ -19,7 +19,6 @@ require (
 	github.com/google/uuid v1.3.1
 	github.com/ipinfo/go/v2 v2.10.0
 	github.com/jarcoal/httpmock v1.3.1
-	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.5.1
 	github.com/mavjs/goPwned v0.0.2
 	github.com/maxmind/mmdbwriter v1.0.0
