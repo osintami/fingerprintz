@@ -1,0 +1,9 @@
+[
+    {
+        "Item": "ip/nope/isDisabled",
+        "Enabled": true,
+        "GJSON": "isDisabled",
+        "Description": "Nope. I'm disabled.",
+        "Type": "Boolean"
+    }
+]

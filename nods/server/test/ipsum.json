@@ -1,0 +1,9 @@
+[
+    {
+        "Item": "ip/ipsum/blacklist.isBlacklisted",
+        "Enabled": true,
+        "GJSON": "ipsum.blacklist.isBlacklisted",
+        "Description": "IP is blacklisted.",
+        "Type": "Boolean"
+    }
+]

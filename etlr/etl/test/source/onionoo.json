@@ -1,0 +1,183 @@
+{
+    "version": "8.0",
+    "relays_published": "2023-09-27 18:00:00",
+    "relays": [
+        {
+            "nickname": "seele",
+            "fingerprint": "000A10D43011EA4928A35F610405F92B4433B4DC",
+            "or_addresses": [
+                "1.2.3.4:9001"
+            ],
+            "last_seen": "2023-09-27 18:00:00",
+            "last_changed_address_or_port": "2022-01-04 00:00:00",
+            "first_seen": "2014-08-23 06:00:00",
+            "running": true,
+            "flags": [
+                "Exit",
+                "Fast",
+                "HSDir",
+                "Running",
+                "Stable",
+                "StaleDesc",
+                "Authority",
+                "BadExit",
+                "HsDir",
+                "Guard",
+                "V2Dir",
+                "Valid"
+            ],
+            "country": "us",
+            "country_name": "United States of America",
+            "as": "AS7018",
+            "as_name": "ATT-INTERNET4",
+            "consensus_weight": 410,
+            "verified_host_names": [
+                "104-53-221-159.lightspeed.sntcca.sbcglobal.net"
+            ],
+            "last_restarted": "2023-08-31 17:35:24",
+            "bandwidth_rate": 1048576,
+            "bandwidth_burst": 2097152,
+            "observed_bandwidth": 1049939,
+            "advertised_bandwidth": 1048576,
+            "exit_policy": [
+                "reject *:*"
+            ],
+            "exit_policy_summary": {
+                "reject": [
+                    "1-65535"
+                ]
+            },
+            "contact": "Nicolas Noble <pixel@nobis-crew.org>",
+            "platform": "Tor 0.4.8.5 on Linux",
+            "version": "0.4.8.5",
+            "version_status": "recommended",
+            "effective_family": [
+                "000A10D43011EA4928A35F610405F92B4433B4DC"
+            ],
+            "consensus_weight_fraction": 3.3031465E-6,
+            "guard_probability": 0.0,
+            "middle_probability": 9.589313E-6,
+            "exit_probability": 0.0,
+            "recommended_version": true,
+            "measured": true
+        },
+        {
+            "nickname": "seele",
+            "fingerprint": "000A10D43011EA4928A35F610405F92B4433B4DC",
+            "or_addresses": [
+                "nope:nope:nope:nope:nope:nope:9001"
+            ],
+            "last_seen": "2023-09-27 18:00:00",
+            "last_changed_address_or_port": "2022-01-04 00:00:00",
+            "first_seen": "2014-08-23 06:00:00",
+            "running": true,
+            "flags": [
+                "Exit",
+                "Fast",
+                "HSDir",
+                "Running",
+                "Stable",
+                "StaleDesc",
+                "Authority",
+                "BadExit",
+                "HsDir",
+                "Guard",
+                "V2Dir",
+                "Valid"
+            ],
+            "country": "us",
+            "country_name": "United States of America",
+            "as": "AS7018",
+            "as_name": "ATT-INTERNET4",
+            "consensus_weight": 410,
+            "verified_host_names": [
+                "104-53-221-159.lightspeed.sntcca.sbcglobal.net"
+            ],
+            "last_restarted": "2023-08-31 17:35:24",
+            "bandwidth_rate": 1048576,
+            "bandwidth_burst": 2097152,
+            "observed_bandwidth": 1049939,
+            "advertised_bandwidth": 1048576,
+            "exit_policy": [
+                "reject *:*"
+            ],
+            "exit_policy_summary": {
+                "reject": [
+                    "1-65535"
+                ]
+            },
+            "contact": "Nicolas Noble <pixel@nobis-crew.org>",
+            "platform": "Tor 0.4.8.5 on Linux",
+            "version": "0.4.8.5",
+            "version_status": "recommended",
+            "effective_family": [
+                "000A10D43011EA4928A35F610405F92B4433B4DC"
+            ],
+            "consensus_weight_fraction": 3.3031465E-6,
+            "guard_probability": 0.0,
+            "middle_probability": 9.589313E-6,
+            "exit_probability": 0.0,
+            "recommended_version": true,
+            "measured": true
+        },
+        {
+            "nickname": "seele",
+            "fingerprint": "000A10D43011EA4928A35F610405F92B4433B4DC",
+            "or_addresses": [
+                "nope.com:9001"
+            ],
+            "last_seen": "2023-09-27 18:00:00",
+            "last_changed_address_or_port": "2022-01-04 00:00:00",
+            "first_seen": "2014-08-23 06:00:00",
+            "running": true,
+            "flags": [
+                "Exit",
+                "Fast",
+                "HSDir",
+                "Running",
+                "Stable",
+                "StaleDesc",
+                "Authority",
+                "BadExit",
+                "HsDir",
+                "Guard",
+                "V2Dir",
+                "Valid"
+            ],
+            "country": "us",
+            "country_name": "United States of America",
+            "as": "AS7018",
+            "as_name": "ATT-INTERNET4",
+            "consensus_weight": 410,
+            "verified_host_names": [
+                "104-53-221-159.lightspeed.sntcca.sbcglobal.net"
+            ],
+            "last_restarted": "2023-08-31 17:35:24",
+            "bandwidth_rate": 1048576,
+            "bandwidth_burst": 2097152,
+            "observed_bandwidth": 1049939,
+            "advertised_bandwidth": 1048576,
+            "exit_policy": [
+                "reject *:*"
+            ],
+            "exit_policy_summary": {
+                "reject": [
+                    "1-65535"
+                ]
+            },
+            "contact": "Nicolas Noble <pixel@nobis-crew.org>",
+            "platform": "Tor 0.4.8.5 on Linux",
+            "version": "0.4.8.5",
+            "version_status": "recommended",
+            "effective_family": [
+                "000A10D43011EA4928A35F610405F92B4433B4DC"
+            ],
+            "consensus_weight_fraction": 3.3031465E-6,
+            "guard_probability": 0.0,
+            "middle_probability": 9.589313E-6,
+            "exit_probability": 0.0,
+            "recommended_version": true,
+            "measured": true
+        }
+    ]
+}

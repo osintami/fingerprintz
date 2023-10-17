@@ -1,0 +1,30 @@
+[
+    {
+        "Item": "ip/greynoise/bot.isCrawler",
+        "Enabled": true,
+        "GJSON": "noise",
+        "Description": "This IP belongs to a monitored business that scans the internet.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/greynoise/bot.isSuspectedBot",
+        "Enabled": true,
+        "GJSON": "riot",
+        "Description": "This IP has been seen scanning the internet and does not belong to a monitored business service.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/greynoise/bot.botType",
+        "Enabled": true,
+        "GJSON": "classification",
+        "Description": "Bot classification.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/greynoise/bot.lastSeenDate",
+        "Enabled": true,
+        "GJSON": "last_seen",
+        "Description": "This IP last seen scanning the internet on this date.",
+        "Type": "Date"
+    }
+]

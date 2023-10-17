@@ -1,0 +1,303 @@
+[
+    {
+        "Name": "ayra",
+        "Enabled": true,
+        "File": "./test/source/ayra.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
+        "Name": "amazon",
+        "Enabled": true,
+        "File": "./test/source/amazon.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
+        "Name": "abuseipdb",
+        "Enabled": true,
+        "File": "./test/source/abuseipdb.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
+        "Name": "test",
+        "Enabled": true,
+        "File": "./test/source/test.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "avastel",
+        "Enabled": true,
+        "File": "./test/source/avastel.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ";"
+    },
+    {
+        "Name": "cloudflare",
+        "Enabled": true,
+        "File": "./test/source/cloudflare.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "azure",
+        "Enabled": true,
+        "File": "./test/source/azure.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
+        "Name": "danmeuk",
+        "Enabled": true,
+        "File": "./test/source/danmeuk.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "digitalocean",
+        "Enabled": true,
+        "File": "./test/source/digitalocean.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "droplist",
+        "Enabled": true,
+        "File": "./test/source/droplist.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ";"
+    },
+    {
+        "Name": "edroplist",
+        "Enabled": true,
+        "File": "./test/source/edroplist.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ";"
+    },
+    {
+        "Name": "dshield",
+        "Enabled": true,
+        "File": "./test/source/dshield.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": "\t"
+    },
+    {
+        "Name": "fakefilter",
+        "Enabled": true,
+        "File": "./test/source/fakefilter.txt",
+        "InputType": "txt",
+        "OutputType": "fast",
+        "Separator": ","
+    },
+    {
+        "Name": "google",
+        "Enabled": true,
+        "File": "./test/source/google.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
+        "Name": "ip1sms",
+        "Enabled": true,
+        "File": "./test/source/ip1sms.json",
+        "InputType": "json",
+        "OutputType": "fast"
+    },
+    {
+        "Name": "ipsum",
+        "Enabled": true,
+        "File": "./test/source/ipsum.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": "\t"
+    },
+    {
+        "Name": "ip2location",
+        "Enabled": true,
+        "File": "./test/source/IP2LOCATION-LITE-DB1.CSV",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "ip2proxy",
+        "Enabled": true,
+        "File": "./test/source/IP2PROXY-LITE-PX2.CSV",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "uhb",
+        "Enabled": true,
+        "File": "./test/source/uhb.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "oracle",
+        "Enabled": true,
+        "File": "./test/source/oracle.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
+        "Name": "x4bnet.vpn",
+        "Enabled": true,
+        "File": "./test/source/x4bnet.vpn.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "x4bnet.tor",
+        "Enabled": true,
+        "File": "./test/source/x4bnet.tor.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "x4bnet.troll",
+        "Enabled": true,
+        "File": "./test/source/x4bnet.troll.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "stripe.webhooks",
+        "Enabled": true,
+        "File": "./test/source/stripe.webhooks.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "stripe.apis",
+        "Enabled": true,
+        "File": "./test/source/stripe.apis.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "tormetrics",
+        "Enabled": true,
+        "File": "./test/source/tormetrics.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "onionoo",
+        "Enabled": true,
+        "File": "./test/source/onionoo.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
+        "Name": "onionoo",
+        "Enabled": true,
+        "File": "./test/source/onionoo.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
+        },
+    {
+        "Name": "udger.bot",
+        "Enabled": true,
+        "File": "./test/source/udger.bot.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.cloud",
+        "Enabled": true,
+        "File": "./test/source/udger.cloud.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.proxy",
+        "Enabled": true,
+        "File": "./test/source/udger.proxy.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.crawler",
+        "Enabled": true,
+        "File": "./test/source/udger.crawler.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.tor",
+        "Enabled": true,
+        "File": "./test/source/udger.tor.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.vpn",
+        "Enabled": true,
+        "File": "./test/source/udger.vpn.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.http",
+        "Enabled": true,
+        "File": "./test/source/udger.http.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.ssh",
+        "Enabled": true,
+        "File": "./test/source/udger.ssh.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "udger.mail",
+        "Enabled": true,
+        "File": "./test/source/udger.mail.csv",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": ","
+    },
+    {
+        "Name": "useragent",
+        "Enabled": true,
+        "File": "./test/source/useragent.yaml",
+        "InputType": "yaml",
+        "OutputType": "yaml"
+    },
+    {
+        "Name": "maxmind",
+        "Enabled": false,
+        "File": "./test/source/maxmind.mmdb",
+        "InputType": "mmdb",
+        "OutputType": "mmdb"
+    }
+]

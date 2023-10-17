@@ -1,0 +1,24 @@
+{
+    "Sources": [
+        {
+            "Name": "osintami",
+            "Database": "code",
+            "Enabled": true
+        },
+        {
+            "Name": "ipsum",
+            "Database": "mmdb",
+            "Enabled": true
+        },
+        {
+            "Name": "fakefilter",
+            "Database": "fast",
+            "Enabled": true
+        },
+        {
+            "Name": "nope",
+            "Database": "mmdb",
+            "Enabled": false
+        }
+    ]
+}

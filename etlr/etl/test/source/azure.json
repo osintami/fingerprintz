@@ -1,0 +1,27 @@
+{
+  "changeNumber": 272,
+  "cloud": "Public",
+  "values": [
+    {
+      "name": "ActionGroup",
+      "id": "ActionGroup",
+      "properties": {
+        "changeNumber": 31,
+        "region": "",
+        "regionId": 0,
+        "platform": "Azure",
+        "systemService": "ActionGroup",
+        "addressPrefixes": [
+          "1.2.3.4/32",
+          "nope"
+        ],
+        "networkFeatures": [
+          "API",
+          "NSG",
+          "UDR",
+          "FW"
+        ]
+      }
+    }
+  ]
+}

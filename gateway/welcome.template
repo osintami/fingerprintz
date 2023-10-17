@@ -1,0 +1,28 @@
+Thank you for purchasing an OSINTAMI NODS API subscription.
+
+Name     $name
+Account  $email
+API Key  $apikey
+
+Example:
+
+curl https://api.osintami.com/data/rule/osint/isCloudNode?ip=34.173.187.95 -H "X-Api-Key: $apikey"
+{
+    "Item": "rule/osint/isCloudNode",
+    "Result": {
+        "Type": 1,
+        "Bool": true
+    },
+    "Keys": {
+        "ip": "34.173.187.95"
+    },
+    "Error": ""
+}
+
+
+Your subscription will auto-renew until cancelled.  Rate limits apply.  The Basic NODS subscription 
+grants you a license to use the NODS API and associated data for internal use only.  Reselling the data 
+in any form is prohibited at the Basic NODS subscription level.
+
+Sincerely,
+The OSINTAMI Team

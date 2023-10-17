@@ -1,0 +1,8 @@
+gateway
+log
+.env.personal
+client/config.json
+client/client
+unwanted.db
+__debug_bin
+stripe-event*

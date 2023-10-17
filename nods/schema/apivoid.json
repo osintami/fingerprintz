@@ -1,0 +1,555 @@
+[
+    {
+        "Item": "ip/apivoid/isHosting",
+        "Enabled": true,
+        "GJSON": "data.report.anonymity.is_hosting",
+        "Description": "IP is a hosting service provider.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/apivoid/isTorNode",
+        "Enabled": true,
+        "GJSON": "data.report.anonymity.is_tor",
+        "Description": "IP is/was a Tor network participant.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/apivoid/blacklist.blacklistInfo",
+        "Enabled": true,
+        "GJSON": "{\"isBlacklisted\":data.report.blacklists.isBlacklisted,\"blacklistCount\":data.report.blacklists.detections}",
+        "Description": "Number of blacklists this IP is on.",
+        "Type": "JSON"
+    },
+    {
+        "Item": "ip/apivoid/blacklistCount",
+        "Enabled": true,
+        "GJSON": "data.report.blacklists.detections",
+        "Description": "Number of blacklists this IP is on.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "ip/apivoid/continent",
+        "Enabled": true,
+        "GJSON": "data.report.information.continent_code",
+        "Description": "ISO continent code.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/apivoid/longitude",
+        "Enabled": true,
+        "GJSON": "data.report.information.longitude",
+        "Description": "Longitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/apivoid/asn",
+        "Enabled": true,
+        "GJSON": "data.report.information.asn",
+        "Description": "ASN",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/apivoid/isProxy",
+        "Enabled": true,
+        "GJSON": "data.report.anonymity.is_proxy",
+        "Description": "IP is a proxy.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/apivoid/isVPN",
+        "Enabled": true,
+        "GJSON": "data.report.anonymity.is_vpn",
+        "Description": "IP is a VPN service.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/apivoid/region",
+        "Enabled": true,
+        "GJSON": "data.report.information.region_name",
+        "Description": "Geo region.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/apivoid/locationInfo",
+        "Enabled": true,
+        "GJSON": "{\"city\":data.report.information.city_name\"country\":data.report.information.country_code\"region\":data.report.information.region_name}",
+        "Description": "GEO",
+        "Type": "JSON"
+    },
+    {
+        "Item": "ip/apivoid/reverseDNS",
+        "Enabled": true,
+        "GJSON": "data.report.information.reverse_dns",
+        "Description": "IP reverse DNS lookup.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/apivoid/country",
+        "Enabled": true,
+        "GJSON": "data.report.information.country_code",
+        "Description": "ISO country code.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/apivoid/city",
+        "Enabled": true,
+        "GJSON": "data.report.information.city_name",
+        "Description": "City name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/apivoid/coordinates",
+        "Enabled": true,
+        "GJSON": "{\"latitude\":data.report.information.latitude\"longitude\":data.report.information.longitude}",
+        "Description": "Latitude/Longitude pair.",
+        "Type": "JSON"
+    },
+    {
+        "Item": "ip/apivoid/ispName",
+        "Enabled": true,
+        "GJSON": "data.report.information.isp",
+        "Description": "ISP name",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/apivoid/isBlacklisted",
+        "Enabled": true,
+        "GJSON": "data.report.blacklists.isBlacklisted",
+        "Description": "IP is blacklisted.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/apivoid/latitude",
+        "Enabled": true,
+        "GJSON": "data.report.information.latitude",
+        "Description": "Latitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/apivoid/isWebProxy",
+        "Enabled": true,
+        "GJSON": "data.report.anonymity.is_webproxy",
+        "Description": "IP is a web proxy.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/apivoid/risk",
+        "Enabled": true,
+        "GJSON": "data.report.risk_score.result",
+        "Description": "APIVoid risk score for this IP.",
+        "Type": "Float"
+    },
+    {
+        "Item": "email/apivoid/isSpoofable",
+        "Enabled": true,
+        "GJSON": "data.is_spoofable",
+        "Description": "Email domain is spoofable.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isSuspiciousDomain",
+        "Enabled": true,
+        "GJSON": "data.suspicious_domain",
+        "Description": "Email domain is suspicious.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isDirtyWordsDomain",
+        "Enabled": true,
+        "GJSON": "data.dirty_words_domain",
+        "Description": "Email domain is profane.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isDomainPopular",
+        "Enabled": true,
+        "GJSON": "data.domain_popular",
+        "Description": "Email domain is popular.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isDirtyWordsUserName",
+        "Enabled": true,
+        "GJSON": "data.dirty_words_username",
+        "Description": "Email user name is profane.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isValidTLD",
+        "Enabled": true,
+        "GJSON": "data.valid_tld",
+        "Description": "Email domain has a valid TLD.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isDisposable",
+        "Enabled": true,
+        "GJSON": "data.disposable",
+        "Description": "This email domain is used for disposable and/or fake email accounts.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isValidSPF",
+        "Enabled": true,
+        "GJSON": "data.has_spf_records",
+        "Description": "Email domain has valid DNS SPF records.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isRiskyTLD",
+        "Enabled": true,
+        "GJSON": "data.risky_tld",
+        "Description": "Email domain is a risky TLD.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isGovernmentDomain",
+        "Enabled": true,
+        "GJSON": "data.government_domain",
+        "Description": "Email domain is a government domain.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isSpam",
+        "Enabled": true,
+        "GJSON": "data.should_block",
+        "Description": "Email domain is a spammer.  Block it.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/risk",
+        "Enabled": true,
+        "GJSON": "data.score",
+        "Description": "APIVOID email risk score.",
+        "Type": "Float"
+    },
+    {
+        "Item": "email/apivoid/IsWeirdUserName",
+        "Enabled": true,
+        "GJSON": "data.suspicious_username",
+        "Description": "Email user name is suspicious.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isSuspiciousEmail",
+        "Enabled": true,
+        "GJSON": "data.suspicious_email",
+        "Description": "Email is suspicious.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isValidMX",
+        "Enabled": true,
+        "GJSON": "data.has_mx_records",
+        "Description": "Email domain has valid DNS MX records.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isChinaFreeEmail",
+        "Enabled": true,
+        "GJSON": "data.china_free_email",
+        "Description": "Email is public and free from China.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isEducationalDoman",
+        "Enabled": true,
+        "GJSON": "data.educational_domain",
+        "Description": "Email domain is an education domaion.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/hasDMARCConfigured",
+        "Enabled": true,
+        "GJSON": "data.dmarc_configured",
+        "Description": "Email domain is configured to prevent email impersonation and phishing attacks with DMARC.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/hasDMARCEnforced",
+        "Enabled": true,
+        "GJSON": "data.dmarc_enforced",
+        "Description": "DMARC is enforced.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isFree",
+        "Enabled": true,
+        "GJSON": "data.free_email",
+        "Description": "Email is public and free.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isRussianFreeEmail",
+        "Enabled": true,
+        "GJSON": "data.russian_free_email",
+        "Description": "Email is public and free from Russia.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isValidEmail",
+        "Enabled": true,
+        "GJSON": "data.valid_format",
+        "Description": "Email is valid.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/domain",
+        "Enabled": true,
+        "GJSON": "data.domain",
+        "Description": "Email domain.",
+        "Type": "String"
+    },
+    {
+        "Item": "email/apivoid/isValidA",
+        "Enabled": true,
+        "GJSON": "data.has_a_records",
+        "Description": "Email domain has valid DNS A records.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/apivoid/isPoliceDomain",
+        "Enabled": true,
+        "GJSON": "data.police_domain",
+        "Description": "Email domain is a police domain.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/longitude",
+        "Enabled": true,
+        "GJSON": "data.report.server.longitude",
+        "Description": "Longitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "domain/apivoid/isRiskyCategory",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_risky_category",
+        "Description": "Domain is in a high risk category.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/risk",
+        "Enabled": true,
+        "GJSON": "data.report.risk_score.result",
+        "Description": "APIVoid domain risk score.",
+        "Type": "Float"
+    },
+    {
+        "Item": "domain/apivoid/latitude",
+        "Enabled": true,
+        "GJSON": "data.report.server.latitude",
+        "Description": "Latitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "domain/apivoid/city",
+        "Enabled": true,
+        "GJSON": "data.report.server.city_name",
+        "Description": "City name.",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/coordinates",
+        "Enabled": true,
+        "GJSON": "{\"latitude\":data.report.server.latitude\"longitude\":data.report.server.longitude}",
+        "Description": "Latitude/Longitude pair.",
+        "Type": "JSON"
+    },
+    {
+        "Item": "domain/apivoid/asn",
+        "Enabled": true,
+        "GJSON": "data.report.server.asn",
+        "Description": "ASN",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/isFreeFileSharing",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_free_file_sharing",
+        "Description": "Free file sharing domain.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isPastebin",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_pastebin",
+        "Description": "Pastebin domain.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isUncommonHostLength",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_uncommon_host_length",
+        "Description": "Domain name has an uncommon length.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isUncommonDotCharCount",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_uncommon_dash_char_count",
+        "Description": "Domain name has an uncommon dash count.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/ip",
+        "Enabled": true,
+        "GJSON": "data.report.server.ip",
+        "Description": "IP address resolved from domain.",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/continent",
+        "Enabled": true,
+        "GJSON": "data.report.server.continent_code",
+        "Description": "ISO continent code.",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/isFreeHosting",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_free_hosting",
+        "Description": "Domain has free hosting.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isFreeDynamicDNS",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_free_dynamic_dns",
+        "Description": "Domain is a free dynamic DNS domain used for self hosting.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isIPv4Assigned",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_domain_ipv4_assigned",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isIPv4Reserved",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_domain_ipv4_reserved",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/reverseDNS",
+        "Enabled": true,
+        "GJSON": "data.report.server.reverse_dns",
+        "Description": "Domain reverse DNS lookup.",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/isIPv4Loopback",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_domain_ipv4_loopback",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isProxy",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_anonymizer",
+        "Description": "Domain is used to hide IP origins.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/region",
+        "Enabled": true,
+        "GJSON": "data.report.server.region_name",
+        "Description": "GEO region.",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/ispName",
+        "Enabled": true,
+        "GJSON": "data.report.server.isp",
+        "Description": "ISP name",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/isCodeSandbox",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_code_sandbox",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/blacklistCount",
+        "Enabled": true,
+        "GJSON": "data.report.blacklists.detections",
+        "Description": "Number of blacklists this domain is on.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "domain/apivoid/isUrlShortener",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_url_shortener",
+        "Description": "Domain is URL shortener.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isFormBuilder",
+        "Enabled": true,
+        "GJSON": "data.report.category.is_form_builder",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isIPv4Valid",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_domain_ipv4_valid",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isBlacklisted",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_domain_blacklisted",
+        "Description": "Domain is blacklisted.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isUncommonClickableDomain",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_uncommon_clickable_domain",
+        "Description": "Domain is uncommon for clicks.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/country",
+        "Enabled": true,
+        "GJSON": "data.report.server.country_code",
+        "Description": "ISO country code.",
+        "Type": "String"
+    },
+    {
+        "Item": "domain/apivoid/isMalicious",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_most_abused_tld",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isIPv4Private",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_domain_ipv4_private",
+        "Description": "",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/isUncommonDashCharCount",
+        "Enabled": true,
+        "GJSON": "data.report.security_checks.is_uncommon_dot_char_count",
+        "Description": "Domain has an uncommon dot count.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/apivoid/location",
+        "Enabled": true,
+        "GJSON": "{\"city\":data.report.server.city_name\"continent\":data.report.information.continent_code\"country\":data.report.server.country_code\"region\":data.report.server.region_name}",
+        "Description": "GEO",
+        "Type": "JSON"
+    }
+]

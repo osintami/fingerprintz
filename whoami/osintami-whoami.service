@@ -1,0 +1,16 @@
+[Unit]
+Description=osintami-whoami
+ConditionPathExists=/home/osintami/whoami
+After=network.target
+
+[Service]
+Type=simple
+User=osintami
+Group=osintami
+WorkingDirectory=/home/osintami/whoami
+EnvironmentFile=/home/osintami/whoami/.env
+ExecStart=/home/osintami/whoami/whoami
+Restart=on-failure
+RestartSec=10
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=osintami-gateway
+ConditionPathExists=/home/osintami/gateway
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=osintami
+WorkingDirectory=/home/osintami/gateway
+EnvironmentFile=/home/osintami/gateway/.env
+ExecStart=/home/osintami/gateway/gateway
+Restart=on-failure
+RestartSec=10
+[Install]
+WantedBy=multi-user.target

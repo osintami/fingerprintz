@@ -1,0 +1,142 @@
+[
+    {
+        "Item": "ip/ipinfo/country",
+        "Enabled": true,
+        "GJSON": "Country",
+        "Description": "GEO country ISO code.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/isAnonymous",
+        "Enabled": true,
+        "GJSON": "Privacy",
+        "Description": "This IP is used to anonymize traffic origin.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipinfo/region",
+        "Enabled": true,
+        "GJSON": "Region",
+        "Description": "GEO region.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/latitude",
+        "Enabled": true,
+        "GJSON": "Latitude",
+        "Description": "GEO latitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/ipinfo/coordinates",
+        "Enabled": true,
+        "GJSON": "{\"latitude\":Latitude\"longitude\":Longitude}",
+        "Description": "GEO latitude/longitude pair.",
+        "Type": "JSON"
+    },
+    {
+        "Item": "ip/ipinfo/isInvalidIP",
+        "Enabled": true,
+        "GJSON": "Bogon",
+        "Description": "IP is a bogon. It is not publicly resolveable.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipinfo/city",
+        "Enabled": true,
+        "GJSON": "City",
+        "Description": "GEO city.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/countryName",
+        "Enabled": true,
+        "GJSON": "CountryName",
+        "Description": "GEO country.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/host",
+        "Enabled": true,
+        "GJSON": "Host",
+        "Description": "Hostname",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/longitude",
+        "Enabled": true,
+        "GJSON": "Longitude",
+        "Description": "GEO longitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/ipinfo/isMalicious",
+        "Enabled": true,
+        "GJSON": "Abuse",
+        "Description": "IP is abusive/malicious.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipinfo/carrier",
+        "Enabled": true,
+        "GJSON": "Carrier",
+        "Description": "ISP name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/location",
+        "Enabled": true,
+        "GJSON": "{\"country\":Country\"region\":Region\"postal\":Postal\"city\":City}",
+        "Description": "GEO location",
+        "Type": "JSON"
+    },
+    {
+        "Item": "ip/ipinfo/domains",
+        "Enabled": true,
+        "GJSON": "Domains",
+        "Description": "IP is associated with these domains.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/postal",
+        "Enabled": true,
+        "GJSON": "Postal",
+        "Description": "GEO zip code",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/asn",
+        "Enabled": true,
+        "GJSON": "ASN",
+        "Description": "ASN",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/isAnyCast",
+        "Enabled": true,
+        "GJSON": "AnyCast",
+        "Description": "IP is anycast.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipinfo/company",
+        "Enabled": true,
+        "GJSON": "Company",
+        "Description": "Company name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/aso",
+        "Enabled": true,
+        "GJSON": "Org",
+        "Description": "ASO",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipinfo/timezone",
+        "Enabled": true,
+        "GJSON": "Timezone",
+        "Description": "Timezone",
+        "Type": "String"
+    }
+]

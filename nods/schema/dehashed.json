@@ -1,0 +1,9 @@
+[
+    {
+        "Item": "email/dehashed/breachCount",
+        "Enabled": true,
+        "GJSON": "total",
+        "Description": "Email breach count.",
+        "Type": "Integer"
+    }
+]

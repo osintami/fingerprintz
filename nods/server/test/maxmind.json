@@ -1,0 +1,9 @@
+[
+    {
+        "Item": "ip/maxmind/location",
+        "Enabled": true,
+        "GJSON": "{\"city\":city.names.en,\"continent\":continent.code,\"country\":country.iso_code,\"latitude\":location.latitude,\"longitude\":location.longitude}",
+        "Description": "GEO",
+        "Type": "JSON"
+    }
+]

@@ -1,0 +1,23 @@
+[
+    {
+        "Name": "fingerprint",
+        "Route": "/fingerprint/",
+        "ACL": "user",
+        "Service": "http://127.0.0.1:8083",
+        "Path": "/whoami/v1/fingerprint/"
+    },
+    {
+        "Name": "nods",
+        "Route": "/data/",
+        "ACL": "user",
+        "Service": "http://127.0.0.1:8082",
+        "Path": "/nods/v1/data/"
+    },
+    {
+        "Name": "etlr",
+        "Route": "/etlr/",
+        "ACL": "admin",
+        "Service": "http://127.0.0.1:8081",
+        "Path": "/etlr/v1/"
+    }
+]
