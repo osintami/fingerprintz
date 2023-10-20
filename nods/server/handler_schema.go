@@ -46,6 +46,7 @@ func (x *NormalizedDataServer) DictionaryHandler(w http.ResponseWriter, r *http.
 					Category:    uri.CategoryName,
 					Source:      uri.SourceName,
 					Item:        uri.ItemName,
+					Enabled:     item.Enabled,
 					Type:        item.Type.String(),
 					Description: item.Description})
 			}
@@ -63,6 +64,7 @@ func (x *NormalizedDataServer) DictionaryHandler(w http.ResponseWriter, r *http.
 					Category:    uri.CategoryName,
 					Source:      item.SourceName,
 					Item:        item.Path,
+					Enabled:     item.Enabled,
 					Type:        item.Type.String(),
 					Description: item.Description})
 			}
