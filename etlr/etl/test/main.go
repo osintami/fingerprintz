@@ -47,7 +47,7 @@ func main() {
 	// load all the ETL instructions organized by vendor
 	sources := []etl.Source{}
 	// load production data sources
-	err := common.LoadJson("../../config.json", &sources)
+	err := common.LoadJson("./config.json", &sources)
 	//err := common.LoadJson("udger.json", &sources)
 	if err != nil {
 		log.Fatal().Err(err).Str("component", "etlr").Msg("config.json missing or corrupt")

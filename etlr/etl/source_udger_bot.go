@@ -3,6 +3,7 @@ package etl
 
 import (
 	"strings"
+	"time"
 
 	"github.com/biter777/countries"
 	"github.com/maxmind/mmdbwriter/mmdbtype"
@@ -19,6 +20,7 @@ func NewUdgerBot(writer IWriter) ITransform {
 }
 
 func (x *UdgerBot) Transform(job IETLJob) error {
+	lastReportedAt := time.Now().Format(common.GO_DEFAULT_DATE)
 	err := job.Tools().CSV.ProcessFile(job.Info().inputFile, rune(job.Source().Separator[0]), func(values []string) error {
 		cidr, err := job.Tools().Network.ParseCIDR(values[1])
 		if err != nil {
@@ -32,7 +34,9 @@ func (x *UdgerBot) Transform(job IETLJob) error {
 						"host":           mmdbtype.String(values[2]),
 						"city":           mmdbtype.String(strings.TrimPrefix(values[4], " ")),
 						"countryCode":    mmdbtype.String(countries.ByName(values[3]).Alpha2()),
-						"lastReportedAt": mmdbtype.String(values[5]),
+						"type":           mmdbtype.String(values[5]),
+						"ua":             mmdbtype.String(values[6]),
+						"lastReportedAt": mmdbtype.String(lastReportedAt),
 					},
 				},
 			}
@@ -65,6 +69,18 @@ func (x *UdgerBot) Transform(job IETLJob) error {
 		Enabled:     true,
 		GJSON:       "udger.bot.countryCode",
 		Description: "GEO country code.",
+		Type:        common.String.String()}
+	job.Tools().Items["udger.bot.type"] = Item{
+		Item:        "ip/udger.bot/bot.type",
+		Enabled:     true,
+		GJSON:       "udger.bot.type",
+		Description: "Bot type.",
+		Type:        common.String.String()}
+	job.Tools().Items["udger.bot.ua"] = Item{
+		Item:        "ip/udger.bot/bot.ua",
+		Enabled:     true,
+		GJSON:       "udger.bot.ua",
+		Description: "Bot user-agent string.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.bot.lastReportedAt"] = Item{
 		Item:        "ip/udger.bot/bot.lastReportedAt",
