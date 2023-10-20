@@ -45,37 +45,37 @@ func (x *UdgerCrawler) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.crawler.isCrawler"] = Item{
-		Item:        "ip/udger/crawler.isCrawler",
+		Item:        "ip/udger.crawler/crawler.isCrawler",
 		Enabled:     true,
 		GJSON:       "udger.crawler.isCrawler",
 		Description: "IP is associated with a crawler.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.crawler.useragent"] = Item{
-		Item:        "ip/udger/crawler.useragent",
+		Item:        "ip/udger.crawler/crawler.useragent",
 		Enabled:     true,
 		GJSON:       "udger.crawler.useragent",
 		Description: "User-Agent for known crawler.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.crawler.host"] = Item{
-		Item:        "ip/udger/crawler.host",
+		Item:        "ip/udger.crawler/crawler.host",
 		Enabled:     true,
 		GJSON:       "udger.crawler.host",
 		Description: "Hostname.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.crawler.city"] = Item{
-		Item:        "ip/udger/crawler.city",
+		Item:        "ip/udger.crawler/crawler.city",
 		Enabled:     true,
 		GJSON:       "udger.crawler.city",
 		Description: "GEO city.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.crawler.countryCode"] = Item{
-		Item:        "ip/udger/crawler.countryCode",
+		Item:        "ip/udger.crawler/crawler.countryCode",
 		Enabled:     true,
 		GJSON:       "udger.crawler.countryCode",
 		Description: "GEO country code.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.crawler.lastReportedAt"] = Item{
-		Item:        "ip/udger/crawler.lastReportedAt",
+		Item:        "ip/udger.crawler/crawler.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.crawler.lastReportedAt",
 		Description: "Last seen date/time.",

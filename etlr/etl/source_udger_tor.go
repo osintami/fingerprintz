@@ -40,31 +40,31 @@ func (x *UdgerTor) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.tor.isTorExitNode"] = Item{
-		Item:        "ip/udger/tor.isTorExitNode",
+		Item:        "ip/udger.tor/tor.isTorExitNode",
 		Enabled:     true,
 		GJSON:       "udger.tor.isTorExitNode",
 		Description: "IP belongs to a Tor Exit node.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.tor.host"] = Item{
-		Item:        "ip/udger/tor.host",
+		Item:        "ip/udger.tor/tor.host",
 		Enabled:     true,
 		GJSON:       "udger.tor.host",
 		Description: "Hostname.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.tor.city"] = Item{
-		Item:        "ip/udger/tor.city",
+		Item:        "ip/udger.tor/tor.city",
 		Enabled:     true,
 		GJSON:       "udger.tor.city",
 		Description: "GEO city.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.tor.countryCode"] = Item{
-		Item:        "ip/udger/tor.countryCode",
+		Item:        "ip/udger.tor/tor.countryCode",
 		Enabled:     true,
 		GJSON:       "udger.tor.countryCode",
 		Description: "GEO country code.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.tor.lastReportedAt"] = Item{
-		Item:        "ip/udger/tor.lastReportedAt",
+		Item:        "ip/udger.tor/tor.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.tor.lastReportedAt",
 		Description: "Last seen date/time.",

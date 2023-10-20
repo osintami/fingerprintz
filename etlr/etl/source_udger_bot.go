@@ -43,31 +43,31 @@ func (x *UdgerBot) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.bot.isBot"] = Item{
-		Item:        "ip/udger/bot.isBot",
+		Item:        "ip/udger.bot/bot.isBot",
 		Enabled:     true,
 		GJSON:       "udger.bot.isBot",
 		Description: "IP is associated with a bot.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.bot.host"] = Item{
-		Item:        "ip/udger/bot.host",
+		Item:        "ip/udger.bot/bot.host",
 		Enabled:     true,
 		GJSON:       "udger.bot.host",
 		Description: "Hostname.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.bot.city"] = Item{
-		Item:        "ip/udger/bot.city",
+		Item:        "ip/udger.bot/bot.city",
 		Enabled:     true,
 		GJSON:       "udger.bot.city",
 		Description: "GEO city.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.bot.countryCode"] = Item{
-		Item:        "ip/udger/bot.countryCode",
+		Item:        "ip/udger.bot/bot.countryCode",
 		Enabled:     true,
 		GJSON:       "udger.bot.countryCode",
 		Description: "GEO country code.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.bot.lastReportedAt"] = Item{
-		Item:        "ip/udger/bot.lastReportedAt",
+		Item:        "ip/udger.bot/bot.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.bot.lastReportedAt",
 		Description: "Last seen date/time.",

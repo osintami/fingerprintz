@@ -52,31 +52,31 @@ func (x *UdgerCloud) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.cloud.isCloudNode"] = Item{
-		Item:        "ip/udger/cloud.isCloudNode",
+		Item:        "ip/udger.cloud/cloud.isCloudNode",
 		Enabled:     true,
 		GJSON:       "udger.cloud.isCloudNode",
 		Description: "IP belongs to a cloud provider.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.cloud.provider"] = Item{
-		Item:        "ip/udger/cloud.provider",
+		Item:        "ip/udger.cloud/cloud.provider",
 		Enabled:     true,
 		GJSON:       "udger.cloud.provider",
 		Description: "Cloud provider name.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.cloud.website"] = Item{
-		Item:        "ip/udger/cloud.website",
+		Item:        "ip/udger.cloud/cloud.website",
 		Enabled:     true,
 		GJSON:       "udger.cloud.website",
 		Description: "Cloud provider website.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.cloud.domain"] = Item{
-		Item:        "ip/udger/cloud.domain",
+		Item:        "ip/udger.cloud/cloud.domain",
 		Enabled:     true,
 		GJSON:       "udger.cloud.domain",
 		Description: "Cloud provider domain.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.cloud.lastReportedAt"] = Item{
-		Item:        "ip/udger/cloud.lastReportedAt",
+		Item:        "ip/udger.cloud/cloud.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.cloud.lastReportedAt",
 		Description: "Last seen date/time.",

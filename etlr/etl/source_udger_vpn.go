@@ -39,25 +39,25 @@ func (x *UdgerVPN) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.vpn.isVPN"] = Item{
-		Item:        "ip/udger/vpn.isVPN",
+		Item:        "ip/udger.vpn/vpn.isVPN",
 		Enabled:     true,
 		GJSON:       "udger.vpn.isVPN",
 		Description: "IP is associated with a VPN service.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.vpn.host"] = Item{
-		Item:        "ip/udger/vpn.host",
+		Item:        "ip/udger.vpn/vpn.host",
 		Enabled:     true,
 		GJSON:       "udger.vpn.host",
 		Description: "Hostname.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.vpn.countryCode"] = Item{
-		Item:        "ip/udger/vpn.countryCode",
+		Item:        "ip/udger.vpn/vpn.countryCode",
 		Enabled:     true,
 		GJSON:       "udger.vpn.countryCode",
 		Description: "GEO country code.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.vpn.lastReportedAt"] = Item{
-		Item:        "ip/udger/vpn.lastReportedAt",
+		Item:        "ip/udger.vpn/vpn.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.vpn.lastReportedAt",
 		Description: "Last seen date/time.",

@@ -42,31 +42,31 @@ func (x *UdgerProxy) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.proxy.isProxy"] = Item{
-		Item:        "ip/udger/proxy.isProxy",
+		Item:        "ip/udger.proxy/proxy.isProxy",
 		Enabled:     true,
 		GJSON:       "udger.proxy.isProxy",
 		Description: "IP is associated with a proxy service.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.proxy.host"] = Item{
-		Item:        "ip/udger/proxy.host",
+		Item:        "ip/udger.proxy/proxy.host",
 		Enabled:     true,
 		GJSON:       "udger.proxy.host",
 		Description: "Hostname.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.proxy.city"] = Item{
-		Item:        "ip/udger/proxy.city",
+		Item:        "ip/udger.proxy/proxy.city",
 		Enabled:     true,
 		GJSON:       "udger.proxy.city",
 		Description: "GEO city.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.proxy.countryCode"] = Item{
-		Item:        "ip/udger/proxy.countryCode",
+		Item:        "ip/udger.proxy/proxy.countryCode",
 		Enabled:     true,
 		GJSON:       "udger.proxy.countryCode",
 		Description: "GEO country code.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.proxy.lastReportedAt"] = Item{
-		Item:        "ip/udger/proxy.lastReportedAt",
+		Item:        "ip/udger.proxy/proxy.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.proxy.lastReportedAt",
 		Description: "Last seen date/time.",

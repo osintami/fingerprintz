@@ -40,31 +40,31 @@ func (x *UdgerHTTP) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.http.isHttpAttack"] = Item{
-		Item:        "ip/udger/http.isHttpAttack",
+		Item:        "ip/udger.http/http.isHttpAttack",
 		Enabled:     true,
 		GJSON:       "udger.http.isHttpAttack",
 		Description: "IP is associated with an HTTP attacker.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.http.host"] = Item{
-		Item:        "ip/udger/http.host",
+		Item:        "ip/udger.http/http.host",
 		Enabled:     true,
 		GJSON:       "udger.http.host",
 		Description: "Hostname.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.http.city"] = Item{
-		Item:        "ip/udger/http.city",
+		Item:        "ip/udger.http/http.city",
 		Enabled:     true,
 		GJSON:       "udger.http.city",
 		Description: "GEO city.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.http.countryCode"] = Item{
-		Item:        "ip/udger/http.countryCode",
+		Item:        "ip/udger.http/http.countryCode",
 		Enabled:     true,
 		GJSON:       "udger.http.countryCode",
 		Description: "GEO country code.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.http.lastReportedAt"] = Item{
-		Item:        "ip/udger/http.lastReportedAt",
+		Item:        "ip/udger.http/http.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.http.lastReportedAt",
 		Description: "Last seen date/time.",

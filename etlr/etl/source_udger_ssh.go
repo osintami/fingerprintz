@@ -40,31 +40,31 @@ func (x *UdgerSSH) Transform(job IETLJob) error {
 	})
 
 	job.Tools().Items["udger.ssh.isSshAttack"] = Item{
-		Item:        "ip/udger/ssh.isSshAttack",
+		Item:        "ip/udger.ssh/ssh.isSshAttack",
 		Enabled:     true,
 		GJSON:       "udger.ssh.isSshAttack",
 		Description: "IP is associated with an HTTP attacker.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["udger.ssh.host"] = Item{
-		Item:        "ip/udger/ssh.host",
+		Item:        "ip/udger.ssh/ssh.host",
 		Enabled:     true,
 		GJSON:       "udger.ssh.host",
 		Description: "Hostname.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.ssh.city"] = Item{
-		Item:        "ip/udger/ssh.city",
+		Item:        "ip/udger.ssh/ssh.city",
 		Enabled:     true,
 		GJSON:       "udger.ssh.city",
 		Description: "GEO city.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.ssh.countryCode"] = Item{
-		Item:        "ip/udger/ssh.countryCode",
+		Item:        "ip/udger.ssh/ssh.countryCode",
 		Enabled:     true,
 		GJSON:       "udger.ssh.countryCode",
 		Description: "GEO country code.",
 		Type:        common.String.String()}
 	job.Tools().Items["udger.ssh.lastReportedAt"] = Item{
-		Item:        "ip/udger/ssh.lastReportedAt",
+		Item:        "ip/udger.ssh/ssh.lastReportedAt",
 		Enabled:     true,
 		GJSON:       "udger.ssh.lastReportedAt",
 		Description: "Last seen date/time.",
