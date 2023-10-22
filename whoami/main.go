@@ -23,14 +23,19 @@ func main() {
 
 	handlers := server.NewWhoamiServer(
 		server.NewJWTSigner(server.NewJWT(os.Getenv("FINGEPRINT_JWT_SECRET"))),
-		common.NewOSINTAMIClient(resty.New(), svrConfig.NodsURL))
+		common.NewOSINTAMIClient(resty.New(), svrConfig.NodsURL),
+		svrConfig.RedirectURL)
 
 	router := chi.NewMux()
 	router.Route(svrConfig.PathPrefix, func(r chi.Router) {
 		r.Get("/v1/fingerprint/scan", handlers.GetFingerprintHandler)
 		r.Post("/v1/fingerprint/scan", handlers.PostFingerprintHandler)
+
 		r.Get("/v1/fingerprint/risk", handlers.GetRiskHandler)
 		r.Post("/v1/fingerprint/risk", handlers.PostRiskHandler)
+
+		r.Get("/v1/fingerprint/latency", handlers.GetLatencyHandler)
+		r.Post("/v1/fingerprint/latency", handlers.PostLatencyHandler)
 	})
 
 	err := common.ListenAndServe(svrConfig.ListenAddr, "", "", router)

@@ -61,6 +61,7 @@ func (x *JWTSigner) SignJWT(fingerprint *Fingerprint) (string, error) {
 		fingerprint.NetworkId,
 		fingerprint.PartnerId,
 		"1.0.0",
+		fingerprint.Latency,
 		jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(time.Now().Add(24 * time.Hour)),
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
@@ -87,6 +88,8 @@ func (x *JWTSigner) DecodeJWT(signature string) (*Fingerprint, error) {
 			fingerprint.DeviceId = claims["hwid"].(string)
 			fingerprint.NetworkId = claims["nid"].(string)
 			fingerprint.PartnerId = claims["pid"].(string)
+			latency := claims["latency"].(float64)
+			fingerprint.Latency = int64(latency)
 			return fingerprint, nil
 		}
 	}

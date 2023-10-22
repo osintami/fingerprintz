@@ -12,7 +12,7 @@ import (
 )
 
 func TestHandlerFingerprintNoInputs(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false), "")
 
 	qParams := make(map[string]string)
 
@@ -24,7 +24,7 @@ func TestHandlerFingerprintNoInputs(t *testing.T) {
 }
 
 func TestHandlerFingerprint(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false), "")
 
 	qParams := make(map[string]string)
 	qParams["email"] = "1@2.com"
@@ -53,7 +53,7 @@ func TestHandlerFingerprint(t *testing.T) {
 }
 
 func TestHandlerFingerprintSignFailure(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, true), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, true), NewMockNods(false), "")
 	qParams := make(map[string]string)
 	qParams["ip"] = "1.2.3.4"
 

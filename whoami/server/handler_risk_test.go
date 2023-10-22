@@ -12,7 +12,7 @@ import (
 )
 
 func TestHandlerRiskNodsFailure(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(true))
+	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(true), "")
 
 	qParams := make(map[string]string)
 	qParams["ip"] = "1.2.3.4"
@@ -26,7 +26,7 @@ func TestHandlerRiskNodsFailure(t *testing.T) {
 }
 
 func TestHandlerRisktDecodeFailure(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(true, false), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(true, false), NewMockNods(false), "")
 	qParams := make(map[string]string)
 	qParams["ip"] = "1.2.3.4"
 	qParams["fingerprint"] = "nope"
@@ -39,7 +39,7 @@ func TestHandlerRisktDecodeFailure(t *testing.T) {
 }
 
 func TestHandlerRisktEncodeFailure(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, true), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, true), NewMockNods(false), "")
 	qParams := make(map[string]string)
 	qParams["ip"] = "1.2.3.4"
 	qParams["fingerprint"] = "nope"
@@ -52,7 +52,7 @@ func TestHandlerRisktEncodeFailure(t *testing.T) {
 }
 
 func TestHandleRiskNoInputs(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false), "")
 
 	qParams := make(map[string]string)
 
@@ -64,7 +64,7 @@ func TestHandleRiskNoInputs(t *testing.T) {
 }
 
 func TestHandleRiskNoFingerprint(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false), "")
 
 	qParams := make(map[string]string)
 	qParams["ip"] = "1.2.3.4"
@@ -77,7 +77,7 @@ func TestHandleRiskNoFingerprint(t *testing.T) {
 }
 
 func TestHandlerRisk(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false), "")
 
 	qParams := make(map[string]string)
 	qParams["email"] = "1@2.com"
@@ -113,7 +113,7 @@ func TestHandlerRisk(t *testing.T) {
 }
 
 func TestHandlerRiskSameWhom(t *testing.T) {
-	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false))
+	server := NewWhoamiServer(NewMockJWTSigner(false, false), NewMockNods(false), "")
 
 	qParams := make(map[string]string)
 	qParams["email"] = "1@2.com"

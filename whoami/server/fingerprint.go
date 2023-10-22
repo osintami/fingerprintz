@@ -24,6 +24,7 @@ type Fingerprint struct {
 	NetworkId  string
 	PartnerId  string
 	Version    string
+	Latency    int64
 }
 
 type FingerprintClaims struct {
@@ -39,6 +40,7 @@ type FingerprintClaims struct {
 	NetworkId  string  `json:"nid"`
 	PartnerId  string  `json:"pid"`
 	Version    string  `json:"version"`
+	Latency    int64   `json:"latency"`
 	jwt.RegisteredClaims
 }
 
@@ -88,5 +90,6 @@ func BiometricsScan(ctx context.Context, nods common.INods, keys map[string]stri
 		DeviceId:   keys["hw"],
 		NetworkId:  fmt.Sprintf("0X%04X", inet),
 		PartnerId:  keys["pid"],
+		Latency:    time.Now().UnixMilli(),
 	}
 }
