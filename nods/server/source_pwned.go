@@ -109,7 +109,7 @@ func (x *PwnedSource) Breaches(email string) (*PwnedInfo, error) {
 	info.Email = email
 	info.BreachCount = 0
 	info.BreachInfo = []*BreachInfo{}
-	breaches, err := x.client.GetAccountBreaches(email, "", true, true)
+	breaches, err := x.client.GetAccountBreaches(email, "", false, true)
 	if err != nil {
 		if strings.Contains(err.Error(), "Not found") {
 			// NOTE:  the pwned API does not return a breachCount of zero, they return an error
