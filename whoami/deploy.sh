@@ -4,7 +4,6 @@ svc=whoami
 # boilerplate commands
 set -x
 set -e
-rm /home/osintami/logs/${svc}.log
 wd=/home/osintami/${svc}
 sudo mkdir -p ${wd}
 sudo cp osintami-${svc}.service /lib/systemd/system/.
