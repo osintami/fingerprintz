@@ -7,7 +7,7 @@
 </table>
 
 <br>
-<p><b>Public Data Items</b></p>
+<p><b>List Data Items</b></p>
 
 <p>curl https://api.osintami.com/data/items?csv=true -H "X-Api-Key: $token"</p>
 
