@@ -68,5 +68,5 @@ func (x *NormalizedDataServer) ItemHandler(w http.ResponseWriter, r *http.Reques
 	delete(output.Keys, common.INPUT_TYPE)
 	delete(output.Keys, common.INPUT_RULE)
 
-	common.SendJSON(w, output)
+	common.SendPrettyJSON(w, output)
 }

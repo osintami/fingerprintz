@@ -71,7 +71,7 @@ func TestHandlerCategoryIP(t *testing.T) {
 
 	server.PostCategoryHandler(w, r)
 	assert.Equal(t, http.StatusOK, w.Code)
-	content := "[{\"Item\":\"ip/ipsum/blacklist.isBlacklisted\",\"Result\":{\"Type\":1,\"Bool\":true},\"Keys\":{\"ip\":\"1.2.3.4\"},\"Error\":\"\"},{\"Item\":\"ip/uhb/blacklist.isBlacklisted\",\"Result\":{\"Type\":1,\"Bool\":true},\"Keys\":{\"ip\":\"1.2.3.4\"},\"Error\":\"\"}]\n"
+	content := "[\n    {\n        \"Item\": \"ip/ipsum/blacklist.isBlacklisted\",\n        \"Result\": {\n            \"Type\": 1,\n            \"Bool\": true\n        },\n        \"Keys\": {\n            \"ip\": \"1.2.3.4\"\n        },\n        \"Error\": \"\"\n    },\n    {\n        \"Item\": \"ip/uhb/blacklist.isBlacklisted\",\n        \"Result\": {\n            \"Type\": 1,\n            \"Bool\": true\n        },\n        \"Keys\": {\n            \"ip\": \"1.2.3.4\"\n        },\n        \"Error\": \"\"\n    }\n]\n"
 	assert.Equal(t, content, w.Body.String())
 }
 
@@ -92,6 +92,6 @@ func TestHandlerCategoryCSV(t *testing.T) {
 	assert.Equal(t, http.StatusOK, w.Code)
 	assert.Equal(t, "text/plain; charset=utf-8", w.Header().Get("Content-Type"))
 
-	content := "category, source, item,                    key,     value\nip,       ipsum,  blacklist.isBlacklisted, 1.2.3.4, true\nip,       uhb,    blacklist.isBlacklisted, 1.2.3.4, true\n"
+	content := "ip/ipsum/blacklist.isBlacklisted, true\nip/uhb/blacklist.isBlacklisted,   true\n"
 	assert.Equal(t, content, w.Body.String())
 }

@@ -28,7 +28,7 @@ func (x *NormalizedDataServer) CategoryHandler(w http.ResponseWriter, r *http.Re
 		return
 	}
 
-	results, err := x.router.CategoryValues(r.Context(), categoryName, keys)
+	outputs, err := x.router.CategoryValues(r.Context(), categoryName, keys)
 	if err != nil {
 		common.SendError(w, err, http.StatusBadRequest)
 		return
@@ -36,20 +36,20 @@ func (x *NormalizedDataServer) CategoryHandler(w http.ResponseWriter, r *http.Re
 
 	wantCSV, _ := strconv.ParseBool(keys["csv"])
 	if !wantCSV {
-		common.SendJSON(w, results)
+		common.SendPrettyJSON(w, outputs)
+		return
 	} else {
 		w := tabwriter.NewWriter(w, 0, 0, 1, ' ', tabwriter.TabIndent)
-		_, _ = fmt.Fprintf(w, "category,\tsource,\titem,\tkey,\tvalue\n")
+		for _, output := range outputs {
+			if output != nil {
+				value := output.Result.Raw
+				if value == "" {
+					value = "\"\""
+				}
 
-		for _, result := range results {
-			if result != nil {
-				uri := NewItemSplitter(result.Item)
-				_, _ = fmt.Fprintf(w, "%s,\t%s,\t%s,\t%s,\t%s\n",
-					uri.CategoryName,
-					uri.SourceName,
-					uri.ItemName,
-					keys[categoryName],
-					result.Result.Raw)
+				fmt.Fprintf(w, "%s,\t%s\n",
+					output.Item,
+					value)
 			}
 		}
 		_ = w.Flush()

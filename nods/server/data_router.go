@@ -109,6 +109,12 @@ func (x *DataRouter) CategoryValues(ctx context.Context, categoryName string, in
 	items := x.schema.ListItemsByCategory(categoryName)
 	for _, item := range items {
 		if source := x.findSourceInstance(item.SourceName); source != nil {
+			// strip out internal use only keys from response
+			delete(inputs, common.INPUT_ROLE)
+			delete(inputs, common.INPUT_KEY)
+			delete(inputs, common.INPUT_TYPE)
+			delete(inputs, common.INPUT_RULE)
+			delete(inputs, common.INPUT_CSV)
 			resp, _ := source.ItemValue(ctx, item, inputs)
 			itemResults = append(itemResults, resp)
 		}

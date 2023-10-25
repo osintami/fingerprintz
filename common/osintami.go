@@ -107,6 +107,7 @@ const (
 	INPUT_ROLE = "role"
 	INPUT_KEY  = "key"
 	INPUT_RULE = "rule"
+	INPUT_CSV  = "csv"
 )
 
 type DataInputs map[string]string

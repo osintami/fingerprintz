@@ -28,7 +28,7 @@ func TestHandlerItem(t *testing.T) {
 	server.GetItemHandler(w, r)
 	assert.Equal(t, http.StatusOK, w.Code)
 
-	content := "{\"Item\":\"ip/ipsum/blacklist.isBlacklisted\",\"Result\":{\"Type\":1,\"Bool\":true},\"Keys\":{\"ip\":\"1.2.3.4\"},\"Error\":\"\"}\n"
+	content := "{\n    \"Item\": \"ip/ipsum/blacklist.isBlacklisted\",\n    \"Result\": {\n        \"Type\": 1,\n        \"Bool\": true\n    },\n    \"Keys\": {\n        \"ip\": \"1.2.3.4\"\n    },\n    \"Error\": \"\"\n}\n"
 	assert.Equal(t, content, w.Body.String())
 }
 
@@ -57,7 +57,7 @@ func TestHandlerItemStripKeys(t *testing.T) {
 	server.GetItemHandler(w, r)
 	assert.Equal(t, http.StatusOK, w.Code)
 
-	content := "{\"Item\":\"ip/ipsum/blacklist.isBlacklisted\",\"Result\":{\"Type\":1,\"Bool\":true},\"Keys\":{\"ip\":\"1.2.3.4\",\"nope\":\"yep\"},\"Error\":\"\"}\n"
+	content := "{\n    \"Item\": \"ip/ipsum/blacklist.isBlacklisted\",\n    \"Result\": {\n        \"Type\": 1,\n        \"Bool\": true\n    },\n    \"Keys\": {\n        \"ip\": \"1.2.3.4\",\n        \"nope\": \"yep\"\n    },\n    \"Error\": \"\"\n}\n"
 	assert.Equal(t, content, w.Body.String())
 }
 
