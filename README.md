@@ -173,7 +173,7 @@ is by no means a proper bullet proof production environment.
     sudo systemctl enable osintami-gateway 
 
     # TEST:  should get an access denied error, not page not found
-    curl https://api.osintami.com/data/schema
+    curl https://api.osintami.com/data/items
     {"error":"not authorized"}
 
 ```
@@ -243,7 +243,7 @@ is by no means a proper bullet proof production environment.
     sudo systemctl enable osintami-nods
 
     # test the dictionary
-    http://127.0.0.1:8082/nods/v1/data/schema?role=admin
+    http://127.0.0.1:8082/nods/v1/data/items?role=admin
 
     [
         {
@@ -259,7 +259,7 @@ is by no means a proper bullet proof production environment.
 
 #### API - Data Dictionary
 ```
- https://api.osintami.com/data/schema?key=<admin api key>&csv=true
+ https://api.osintami.com/data/items?key=<admin api key>&csv=true
 
 ```
 

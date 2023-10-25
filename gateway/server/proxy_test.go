@@ -11,7 +11,7 @@ import (
 
 func TestProxy(t *testing.T) {
 	proxy := NewReverseProxy()
-	r := common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "admin_api_key")
 	w := httptest.NewRecorder()
 	proxy.ServeHTTP(w, r, r.URL)

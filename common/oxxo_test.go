@@ -188,7 +188,7 @@ func TestPrintEnvironment(t *testing.T) {
 }
 
 func TestQueryParam(t *testing.T) {
-	r, err := http.NewRequest(http.MethodGet, "https://api.osintami.com/data/schema", strings.NewReader(""))
+	r, err := http.NewRequest(http.MethodGet, "https://api.osintami.com/data/items", strings.NewReader(""))
 	assert.Nil(t, err)
 
 	params := url.Values{}
@@ -200,7 +200,7 @@ func TestQueryParam(t *testing.T) {
 }
 
 func TestPathParam(t *testing.T) {
-	r := httptest.NewRequest(http.MethodGet, "https://api.osintami.com/data/schema", nil)
+	r := httptest.NewRequest(http.MethodGet, "https://api.osintami.com/data/items", nil)
 	rctx := chi.NewRouteContext()
 	rctx.URLParams.Add("key", "xxx")
 	r = r.WithContext(context.WithValue(r.Context(), chi.RouteCtxKey, rctx))

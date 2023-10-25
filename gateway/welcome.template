@@ -7,9 +7,9 @@
 </table>
 
 <br>
-<p><b>Public Rules</b></p>
+<p><b>Public Data Items</b></p>
 
-<p>curl https://api.osintami.com/data/schema?csv=true -H "X-Api-Key: $token"</p>
+<p>curl https://api.osintami.com/data/items?csv=true -H "X-Api-Key: $token"</p>
 
 </br>
 <table class="table table-bordered table-hover table-condensed">
@@ -117,7 +117,7 @@
 
 </tbody></table>
 
-<p><b>Execute a Rule</b></p>
+<p><b>Query a Data Item</b></p>
 
 <p>curl https://api.osintami.com/data/rule/osintami/isCloudNode?ip=34.173.187.95 -H "X-Api-Key: $token"</p>
 {

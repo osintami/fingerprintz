@@ -16,7 +16,7 @@ func TestHandlerSchemaUser(t *testing.T) {
 
 	qParams := make(map[string]string)
 	qParams["role"] = "user"
-	r := common.BuildRequest(http.MethodGet, "/v1/data/schema", nil, qParams)
+	r := common.BuildRequest(http.MethodGet, "/v1/data/items", nil, qParams)
 	w := httptest.NewRecorder()
 
 	server.DictionaryHandler(w, r)
@@ -33,7 +33,7 @@ func TestHandlerSchemaUserCSV(t *testing.T) {
 	qParams := make(map[string]string)
 	qParams["role"] = "user"
 	qParams["csv"] = "true"
-	r := common.BuildRequest(http.MethodGet, "/v1/data/schema", nil, qParams)
+	r := common.BuildRequest(http.MethodGet, "/v1/data/items", nil, qParams)
 
 	w := httptest.NewRecorder()
 	server.DictionaryHandler(w, r)
@@ -48,7 +48,7 @@ func TestHandlerSchemaAdmin(t *testing.T) {
 
 	qParams := make(map[string]string)
 	qParams["role"] = "admin"
-	r := common.BuildRequest(http.MethodGet, "/v1/data/schema", nil, qParams)
+	r := common.BuildRequest(http.MethodGet, "/v1/data/items", nil, qParams)
 	w := httptest.NewRecorder()
 
 	server.DictionaryHandler(w, r)
@@ -66,7 +66,7 @@ func TestHandlerSchemaAdminCSV(t *testing.T) {
 	qParams["role"] = "admin"
 	qParams["csv"] = "true"
 
-	r := common.BuildRequest(http.MethodGet, "/v1/data/schema", nil, qParams)
+	r := common.BuildRequest(http.MethodGet, "/v1/data/items", nil, qParams)
 	w := httptest.NewRecorder()
 
 	server.DictionaryHandler(w, r)
@@ -79,7 +79,7 @@ func TestHandlerSchemaAdminCSV(t *testing.T) {
 func TestHandlerSchemaRoleMissing(t *testing.T) {
 	server := nodsServer(false)
 
-	r := common.BuildRequest(http.MethodGet, "/v1/data/schema", nil, nil)
+	r := common.BuildRequest(http.MethodGet, "/v1/data/items", nil, nil)
 	w := httptest.NewRecorder()
 
 	server.DictionaryHandler(w, r)

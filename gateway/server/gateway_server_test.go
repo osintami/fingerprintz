@@ -26,7 +26,7 @@ func createServer() *GatewayServer {
 func TestReverseProxyHandler(t *testing.T) {
 	svr := createServer()
 
-	r := common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "admin_api_key")
 	w := httptest.NewRecorder()
 
@@ -58,7 +58,7 @@ func TestReverseProxyHandlerUnsupportedRoute(t *testing.T) {
 func TestReverseProxyHandlerUnknownUser(t *testing.T) {
 	svr := createServer()
 
-	r := common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	w := httptest.NewRecorder()
 
 	svr.ReverseProxyHandler(w, r)
@@ -80,14 +80,14 @@ func TestBurnToken(t *testing.T) {
 	svr := createServer()
 
 	// valid account
-	r := common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "admin_api_key")
 	account, err := svr.authUser(r, "admin_api_key", "nods")
 	assert.Nil(t, err)
 	assert.Equal(t, 0, account.Tokens)
 
 	// invalid account
-	r = common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r = common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "nope_api_key")
 	account, err = svr.authUser(r, "nope_api_key", "nods")
 	assert.Equal(t, ErrApiKey, err)
@@ -136,28 +136,28 @@ func TestFindAccount(t *testing.T) {
 	svr := createServer()
 
 	// admin account
-	r := common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "admin_api_key")
 	account, err := svr.findAccount(r)
 	assert.Nil(t, err)
 	assert.Equal(t, "admin", account.Role)
 
 	// user account
-	r = common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r = common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "user_api_key")
 	account, err = svr.findAccount(r)
 	assert.Nil(t, err)
 	assert.Equal(t, "user", account.Role)
 
 	// invalid account
-	r = common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r = common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "nope_api_key")
 	account, err = svr.findAccount(r)
 	assert.Equal(t, ErrApiKey, err)
 	assert.Nil(t, account)
 
 	// missing API key
-	r = common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r = common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "")
 	account, err = svr.findAccount(r)
 	assert.Equal(t, ErrApiKey, err)
@@ -166,7 +166,7 @@ func TestFindAccount(t *testing.T) {
 
 func TestFindAccountBadKey(t *testing.T) {
 	svr := createServer()
-	r := common.BuildRequest(http.MethodGet, "/data/schema", nil, nil)
+	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "nope_api_key")
 	account, err := svr.findAccount(r)
 	assert.NotNil(t, err)

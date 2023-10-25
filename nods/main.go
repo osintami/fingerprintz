@@ -47,7 +47,7 @@ func main() {
 	mux.Route(svrConfig.PathPrefix, func(r chi.Router) {
 		r.Use(middleware.RequestID)
 		// view of the data dictionary
-		r.Get("/v1/data/schema", handlers.DictionaryHandler)
+		r.Get("/v1/data/items", handlers.DictionaryHandler)
 		// query one item
 		r.Get("/v1/data/{category}/{vendor}/{item}", handlers.GetItemHandler)
 		r.Post("/v1/data/{category}/{vendor}/{item}", handlers.PostItemHandler)
