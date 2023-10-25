@@ -15,7 +15,7 @@ var ErrMissingOrInvalidName = errors.New("missing or invalid name")
 var ErrNotHuman = errors.New("captcha failed")
 var ErrFakeDomain = errors.New("disposable email")
 var ErrFingerprintSmudged = errors.New("fingerprint smudged")
-var ErrIpAddrInUse = errors.New("ip address in use, please contact support")
+var ErrIpAddrInUse = errors.New("ip address in use, please contact support@osintami.com")
 
 func (x *GatewayServer) SignupHandler(w http.ResponseWriter, r *http.Request) {
 
