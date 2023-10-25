@@ -71,14 +71,13 @@ func (x *FastCache) Delete(pattern string) {
 }
 
 func (x *FastCache) ToJSON(fileName string) error {
-	out := "[\n"
+	out := make([]interface{}, 0)
 	for _, v := range x.cache.Items() {
-		json, err := json.MarshalIndent(v.Object, "", "    ")
-		if err != nil {
-			return err
-		}
-		out += string(json)
+		out = append(out, v.Object)
 	}
-	out += "\n]"
-	return os.WriteFile(fileName, []byte(out), 0644)
+	json, err := json.MarshalIndent(out, "", "    ")
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(fileName, []byte(json), 0644)
 }
