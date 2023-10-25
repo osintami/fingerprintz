@@ -1,0 +1,16 @@
+[
+    {
+        "Item": "ip/spamhous/isBlacklisted",
+        "Enabled": true,
+        "GJSON": "IsBlacklisted",
+        "Description": "IP is blacklisted.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/spamhous/isBlacklisted",
+        "Enabled": true,
+        "GJSON": "IsBlacklisted",
+        "Description": "Domain is blacklisted.",
+        "Type": "Boolean"
+    }
+]

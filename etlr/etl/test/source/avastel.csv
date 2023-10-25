@@ -1,0 +1,7 @@
+# Avastel all infected IPs 7d blocklist
+# Last update: Tue Sep 26 2023 00:00:10 GMT+0000 (Coordinated Universal Time)
+# Number IPs blocked: 28510
+
+ip_address;autonomous_system
+1.2.3.4;Saero Network Service LTD
+nope;Telefonica del Sur S.A.

@@ -1,0 +1,20 @@
+package server
+
+const (
+	CATEGORY_EMAIL    = "email"
+	CATEGORY_IPADDR   = "ip"
+	CATEGORY_DOMAIN   = "domain"
+	CATEGORY_PASSWORD = "password"
+	CATEGORY_PHONE    = "phone"
+	CATEGORY_BROWSER  = "browser"
+	CATEGORY_RULE     = "rule"
+)
+
+var CATEGORIES = []string{
+	CATEGORY_BROWSER,
+	CATEGORY_DOMAIN,
+	CATEGORY_EMAIL,
+	CATEGORY_IPADDR,
+	CATEGORY_PASSWORD,
+	CATEGORY_PHONE,
+	CATEGORY_RULE}

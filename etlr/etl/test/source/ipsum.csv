@@ -1,0 +1,10 @@
+# IPsum Threat Intelligence Feed
+# (https://github.com/stamparm/ipsum)
+#
+# Last update: Tue, 26 Sep 2023 03:09:11 +0200
+#
+# IP	number of (black)lists
+#
+1.2.3.4	9
+nope	9
+1.2.3.4	x

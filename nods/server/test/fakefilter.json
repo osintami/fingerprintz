@@ -1,0 +1,9 @@
+[
+    {
+        "Item": "domain/fakefilter/IsFake",
+        "Enabled": true,
+        "GJSON": "Result.IsFake",
+        "Description": "Domain is associated with fake/disposable emails.",
+        "Type": "Boolean"
+    }
+]

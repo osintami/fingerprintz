@@ -1,0 +1,51 @@
+[
+    {
+        "Item": "password/pwned/pastebinCount",
+        "Enabled": true,
+        "GJSON": "PastebinCount",
+        "Description": "This password has been pwned.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/pwned/breachCount",
+        "Enabled": true,
+        "GJSON": "BreachCount",
+        "Description": "Email breach count.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/pwned/breachAgeInDays",
+        "Enabled": true,
+        "GJSON": "MostRecentBreachInDays",
+        "Description": "Most recent breach date in days.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/pwned/breachAgeDate",
+        "Enabled": true,
+        "GJSON": "MostRecentBreachDate",
+        "Description": "Most recent breach date.",
+        "Type": "Date"
+    },
+    {
+        "Item": "email/pwned/breachAgeInYears",
+        "Enabled": true,
+        "GJSON": "MostRecentBreachInYears",
+        "Description": "Most recent breach date in years.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/pwned/breachInfo",
+        "Enabled": true,
+        "GJSON": "BreachInfo",
+        "Description": "Breach details.",
+        "Type": "JSON"
+    },
+    {
+        "Item": "email/pwned/pastebinCount",
+        "Enabled": true,
+        "GJSON": "PastebinCount",
+        "Description": "Email has been found in pastebin this many times.",
+        "Type": "Integer"
+    }
+]

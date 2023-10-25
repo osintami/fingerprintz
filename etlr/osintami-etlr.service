@@ -1,0 +1,16 @@
+[Unit]
+Description=osintami-etlr
+ConditionPathExists=/home/osintami/etlr
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=osintami
+WorkingDirectory=/home/osintami/etlr
+EnvironmentFile=/home/osintami/etlr/.env
+ExecStart=/home/osintami/etlr/etlr
+Restart=on-failure
+RestartSec=10
+[Install]
+WantedBy=multi-user.target

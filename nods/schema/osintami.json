@@ -1,0 +1,313 @@
+[
+    {
+        "Item": "rule/osintami/isHuman",
+        "Enabled": true,
+        "GJSON": "isHuman",
+        "Query": "!([rule/osintami/isBot] || [rule/osintami/isCloud])",
+        "Description": "I am not a machine.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isBot",
+        "Enabled": true,
+        "GJSON": "isBot",
+        "Query": "[ip/avastel/bot.isBot] || [ip/udger.bot/bot.isBot] || [ip/x4bnet.troll/bot.isForumBot] || [ip/greynoise/bot.isSuspectedBot]",
+        "Description": "This IP address is being used by a software bot.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isAI",
+        "Enabled": true,
+        "GJSON": "isAI",
+        "Query": "[rule/osintami/isBot] || [rule/osintami/isCloud]",
+        "Description": "This IP address is being used by artificial intelligence.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isTor",
+        "Enabled": true,
+        "GJSON": "isTorExitNode",
+        "Query": "[ip/tormetrics/tor.isTorExitNode] || [ip/onionoo/tor.isTorNode]]",
+        "Description": "This IP address belongs to an active Tor Exit node.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isCloudNode",
+        "Enabled": true,
+        "GJSON": "isCloudNode",
+        "Query": "[ip/udger.cloud/cloud.isCloudNode] || [ip/google/cloud.isGoogle] || [ip/digitalocean/cloud.isDigitalOcean] || [ip/amazon/cloud.isAmazon] || [ip/oracle/cloud.isOracle] || [ip/azure/cloud.isAzure] || [ip/cloudflare/cloud.isCloudflare]",
+        "Description": "This IP address belongs to a cloud provider.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isProxy",
+        "Enabled": true,
+        "GJSON": "isProxy",
+        "Query": "[ip/udger.proxy/proxy.isProxy] || [ip/ip2proxy/proxy.isProxy]",
+        "Description": "This IP address belongs to a proxy provider.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isVPN",
+        "Enabled": true,
+        "GJSON": "isVPN",
+        "Query": "[ip/x4bnet.vpn/vpn.isVPN] || [ip/udger.vpn/vpn.isVPN]",
+        "Description": "This IP address belongs to a VPN provider.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isBlacklisted",
+        "Enabled": true,
+        "GJSON": "isBlacklisted",
+        "Query": "[ip/ipsum/blacklist.isBlacklisted] || [ip/uhb/blacklist.isBlacklisted]",
+        "Description": "This IP address is blacklisted by one or more sources.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isUSA",
+        "Enabled": true,
+        "GJSON": "isUSA",
+        "Query": "[ip/maxmind/country] == 'US'",
+        "Description": "USA only.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/location",
+        "Enabled": true,
+        "GJSON": "",
+        "Query": "[ip/maxmind/location]",
+        "Description": "Latitude, longtitude, city, country, continent",
+        "Type": "JSON"
+    },
+    {
+        "Item": "rule/osintami/isOutsideUSA",
+        "Enabled": true,
+        "GJSON": "isUSA",
+        "Query": "[ip/maxmind/country] != 'US'",
+        "Description": "USA only.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/hasRecentBreach",
+        "Enabled": true,
+        "GJSON": "isCompromised",
+        "Query": "[email/pwned/breachCount] > 0 && [email/pwned/breachAgeDate] > @{1.years.ago}",
+        "Description": "Email breached less than 1 year ago.  Require input parameters are email.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isNefariusDomain",
+        "Enabled": true,
+        "GJSON": "isDisposable",
+        "Query": "[domain/fakefilter/IsFake]",
+        "Description": "Email domain has a very bad reputation.  Required input parameter is domain.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isBurnerPhone",
+        "Enabled": true,
+        "GJSON": "isDisposable",
+        "Query": "[phone/ip1sms/IsDisposable]",
+        "Description": "Phone number belongs to a burner/disposable plan. Required input parameter is phone.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isSignupSafe",
+        "Enabled": true,
+        "GJSON": "isSignupSafe",
+        "Query": "!([rule/osintami/isUSA]) || [rule/osintami/isCompromised] || [rule/osintami/isNefariusDomain] || [rule/osintami/isBlacklisted] || [rule/osintami/isBurnerPhone]",
+        "Description": "Signup review. Required input parameters are ip, email, domain, and phone.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isHuman",
+        "Enabled": true,
+        "GJSON": "isHuman",
+        "Query": "!([rule/osintami/isBot] || [rule/osintami/isBlacklisted] || [rule/osintami/isCloudNode])",
+        "Description": "Not a known bot, crawler or code running in the cloud.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "rule/osintami/isAnonymous",
+        "Enabled": true,
+        "GJSON": "isAnonymous",
+        "Query": "[rule/osintami/isVPN] || [rule/osintami/isProxy] || [rule/osintami/isTor]",
+        "Description": "Tor, VPN or Proxy in use.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/osintami/hasStrangeName",
+        "Enabled": true,
+        "GJSON": "IsWeirdDomainName",
+        "Description": "Too many numbers or non_alphanumerics.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/osintami/isEmailAlias",
+        "Enabled": true,
+        "GJSON": "IsEmailAlias",
+        "Description": "Possible account creation fraud.  Email is an alias",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/osintami/isValidIcannSuffix",
+        "Enabled": true,
+        "GJSON": "IsValidIcannSuffix",
+        "Description": "Email domain has a valid ICAN suffix.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/osintami/isValidEmail",
+        "Enabled": true,
+        "GJSON": "IsValidEmail",
+        "Description": "Email is valid",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/osintami/isMaliciousTLD",
+        "Enabled": true,
+        "GJSON": "IsMaliciousTLD",
+        "Description": "These domains are totally rotten. Ninety percent of the bad things that happen on the internet live here.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/osintami/hasStrangeName",
+        "Enabled": true,
+        "GJSON": "IsWeirdUserName",
+        "Description": "Too many numbers or non_alphanumerics.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "browser/osintami/patch",
+        "Enabled": true,
+        "GJSON": "UserAgent.Patch",
+        "Description": "User agent patch",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/osPatch",
+        "Enabled": true,
+        "GJSON": "Os.Patch",
+        "Description": "OS patch",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/osPatchMinor",
+        "Enabled": true,
+        "GJSON": "Os.PatchMinor",
+        "Description": "OS minor patch",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/major",
+        "Enabled": true,
+        "GJSON": "UserAgent.Major",
+        "Description": "User agent major version",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/osFamily",
+        "Enabled": true,
+        "GJSON": "Os.Family",
+        "Description": "OS family",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/osMinor",
+        "Enabled": true,
+        "GJSON": "Os.Minor",
+        "Description": "OS minor version",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/minor",
+        "Enabled": true,
+        "GJSON": "UserAgent.Minor",
+        "Description": "User agent minor version",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/deviceModel",
+        "Enabled": true,
+        "GJSON": "Device.Model",
+        "Description": "Device model",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/family",
+        "Enabled": true,
+        "GJSON": "UserAgent.Family",
+        "Description": "User agent family.",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/osMajor",
+        "Enabled": true,
+        "GJSON": "Os.Major",
+        "Description": "OS major version",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/deviceFamily",
+        "Enabled": true,
+        "GJSON": "Device.Family",
+        "Description": "Device family",
+        "Type": "String"
+    },
+    {
+        "Item": "browser/osintami/deviceBrand",
+        "Enabled": true,
+        "GJSON": "Device.Brand",
+        "Description": "Device brand",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/osintami/phoneNumber",
+        "Enabled": true,
+        "GJSON": "PhoneNumber",
+        "Description": "National phone number.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "phone/osintami/isTollFree",
+        "Enabled": true,
+        "GJSON": "IsTollFree",
+        "Description": "Toll free number.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/osintami/nationalNumber",
+        "Enabled": true,
+        "GJSON": "NationalNumber",
+        "Description": "Formatted national phone number.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/osintami/internationalNumber",
+        "Enabled": true,
+        "GJSON": "InternationalNumber",
+        "Description": "Formatted international phone number.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/osintami/isValidPhone",
+        "Enabled": true,
+        "GJSON": "IsValid",
+        "Description": "Phone number is valid.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/osintami/country",
+        "Enabled": true,
+        "GJSON": "CountryISOCode",
+        "Description": "Phone number country code",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/osintami/countryCode",
+        "Enabled": true,
+        "GJSON": "CountryCode",
+        "Description": "Phone number dialing country code.",
+        "Type": "Integer"
+    }
+]

@@ -1,0 +1,8 @@
+# Fake and Temp Mail Providers
+# https://github.com/7c/fakefilter
+# Last Update: 2023-09-26T00:18:07.391Z
+
+
+## trash-mail.com
+1.2.3.4
+nope.com

@@ -1,0 +1,30 @@
+[
+    {
+        "Item": "domain/whois/domainAgeDate",
+        "Enabled": true,
+        "GJSON": "DomainAgeDate",
+        "Description": "Domain created date.",
+        "Type": "Date"
+    },
+    {
+        "Item": "domain/whois/isValidDomain",
+        "Enabled": true,
+        "GJSON": "IsRegisteredDomain",
+        "Description": "Domain is registered.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "domain/whois/domainAgeInDays",
+        "Enabled": true,
+        "GJSON": "DomainAgeInDays",
+        "Description": "Domain age in days.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "domain/whois/domainAgeInYears",
+        "Enabled": true,
+        "GJSON": "DomainAgeInYears",
+        "Description": "Domain age in years.",
+        "Type": "Integer"
+    }
+]

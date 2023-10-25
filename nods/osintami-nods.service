@@ -1,0 +1,16 @@
+[Unit]
+Description=osintami-nods
+ConditionPathExists=/home/osintami/nods
+After=network.target
+
+[Service]
+Type=simple
+User=osintami
+Group=osintami
+WorkingDirectory=/home/osintami/nods
+EnvironmentFile=/home/osintami/nods/.env
+ExecStart=/home/osintami/nods/nods
+Restart=on-failure
+RestartSec=10
+[Install]
+WantedBy=multi-user.target

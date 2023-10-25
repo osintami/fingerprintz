@@ -1,0 +1,471 @@
+[
+    {
+        "Item": "ip/ipqs/country",
+        "Enabled": true,
+        "GJSON": "country_code",
+        "Description": "ISO country code",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/asn",
+        "Enabled": true,
+        "GJSON": "ASN",
+        "Description": "ASN",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/aso",
+        "Enabled": true,
+        "GJSON": "organization",
+        "Description": "Organization name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/isProxy",
+        "Enabled": true,
+        "GJSON": "proxy",
+        "Description": "IP is a web proxy.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/isTorNode",
+        "Enabled": true,
+        "GJSON": "tor",
+        "Description": "IP is/was a Tor network participant.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/isMalicious",
+        "Enabled": true,
+        "GJSON": "recent_abuse",
+        "Description": "IP has recent abuse/malicious behavior reported.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/locationInfo",
+        "Enabled": true,
+        "GJSON": "{\"city\":city,\"country\":country_code,\"region\":region}",
+        "Description": "GEO",
+        "Type": "JSON"
+    },
+    {
+        "Item": "ip/ipqs/risk",
+        "Enabled": true,
+        "GJSON": "fraud_score",
+        "Description": "IPQS fraud score for this IP.",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/ipqs/ispName",
+        "Enabled": true,
+        "GJSON": "ISP",
+        "Description": "ISP name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/isCrawler",
+        "Enabled": true,
+        "GJSON": "is_crawler",
+        "Description": "IP is a crawler.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/timezone",
+        "Enabled": true,
+        "GJSON": "timezone",
+        "Description": "Timezone.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/isActiveVPN",
+        "Enabled": true,
+        "GJSON": "active_vpn",
+        "Description": "IP is a current VPN service.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/latitude",
+        "Enabled": true,
+        "GJSON": "latitude",
+        "Description": "Latitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/ipqs/city",
+        "Enabled": true,
+        "GJSON": "city",
+        "Description": "City name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/isMobile",
+        "Enabled": true,
+        "GJSON": "mobile",
+        "Description": "IP is from a mobile phone.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/isVPN",
+        "Enabled": true,
+        "GJSON": "vpn",
+        "Description": "IP is a VPN service.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/isActiveTorNode",
+        "Enabled": true,
+        "GJSON": "active_tor",
+        "Description": "IP is a current participant in the Tor network.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/postal",
+        "Enabled": true,
+        "GJSON": "zip_code",
+        "Description": "GEO zip code",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/longitude",
+        "Enabled": true,
+        "GJSON": "longitude",
+        "Description": "GEO longitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/ipqs/region",
+        "Enabled": true,
+        "GJSON": "region",
+        "Description": "GEO region.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/host",
+        "Enabled": true,
+        "GJSON": "host",
+        "Description": "Hostname",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/ipqs/isBot",
+        "Enabled": true,
+        "GJSON": "bot_status",
+        "Description": "IP is a bot.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/ipqs/coordinates",
+        "Enabled": true,
+        "GJSON": "{\"latitude\":latitude,\"longitude\":longitude}",
+        "Description": "GEO latitude/longitude pair.",
+        "Type": "JSON"
+    },
+    {
+        "Item": "phone/ipqs/smsEmail",
+        "Enabled": true,
+        "GJSON": "SmsEmail",
+        "Description": "SMS email associated with this phone number.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/isDisposable",
+        "Enabled": true,
+        "GJSON": "Prepaid",
+        "Description": "Phone is a prepaid/disposable phone.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/isRisky",
+        "Enabled": true,
+        "GJSON": "Risky",
+        "Description": "Phone number is risky.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/numberType",
+        "Enabled": true,
+        "GJSON": "LineType",
+        "Description": "Number type.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/countryCode",
+        "Enabled": true,
+        "GJSON": "DialingCode",
+        "Description": "Phone number dialing country code.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "phone/ipqs/mnc",
+        "Enabled": true,
+        "GJSON": "Mnc",
+        "Description": "Telco mnc",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/isMalicious",
+        "Enabled": true,
+        "GJSON": "RecentAbuse",
+        "Description": "Recently reported as malicious.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/city",
+        "Enabled": true,
+        "GJSON": "City",
+        "Description": "GEO city.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/country",
+        "Enabled": true,
+        "GJSON": "Country",
+        "Description": "GEO country ISO code.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/isSpam",
+        "Enabled": true,
+        "GJSON": "Spammer",
+        "Description": "Phone number is a spammer.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/name",
+        "Enabled": true,
+        "GJSON": "Name",
+        "Description": "Phone name.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/isReachable",
+        "Enabled": true,
+        "GJSON": "Active",
+        "Description": "Phone number is active.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/isDNO",
+        "Enabled": true,
+        "GJSON": "DoNotCall",
+        "Description": "Phone number is on the do not originate list.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/fraud",
+        "Enabled": true,
+        "GJSON": "FraudScore",
+        "Description": "Fraud score",
+        "Type": "Integer"
+    },
+    {
+        "Item": "phone/ipqs/postal",
+        "Enabled": true,
+        "GJSON": "ZipCode",
+        "Description": "GEO zip code.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/isVOIP",
+        "Enabled": true,
+        "GJSON": "Voip",
+        "Description": "Phone is a VOIP phone.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/region",
+        "Enabled": true,
+        "GJSON": "Region",
+        "Description": "GEO region.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/locationInfo",
+        "Enabled": true,
+        "GJSON": "{\"city\":City,\"country\":Country}",
+        "Description": "GEO location.",
+        "Type": "JSON"
+    },
+    {
+        "Item": "phone/ipqs/activeStatus",
+        "Enabled": true,
+        "GJSON": "ActiveStatus",
+        "Description": "Phone is able to be called.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/nationalNumber",
+        "Enabled": true,
+        "GJSON": "LocalFormat",
+        "Description": "Formatted international phone number.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/mcc",
+        "Enabled": true,
+        "GJSON": "Mcc",
+        "Description": "Telco mcc",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/timezone",
+        "Enabled": true,
+        "GJSON": "Timezone",
+        "Description": "Phone timezone.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/smsDomain",
+        "Enabled": true,
+        "GJSON": "SmsDomain",
+        "Description": "SMS domain associated with this phone number.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/isLeaked",
+        "Enabled": true,
+        "GJSON": "Leaked",
+        "Description": "Phone number has been leaked.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/internationalNumber",
+        "Enabled": true,
+        "GJSON": "Formatted",
+        "Description": "Formatted national phone number.",
+        "Type": "String"
+    },
+    {
+        "Item": "phone/ipqs/isValidPhone",
+        "Enabled": true,
+        "GJSON": "Valid",
+        "Description": "Phone number is valid.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "phone/ipqs/carrierName",
+        "Enabled": true,
+        "GJSON": "Carrier",
+        "Description": "Network carrier name.",
+        "Type": "String"
+    },
+    {
+        "Item": "email/ipqs/isValidEmail",
+        "Enabled": true,
+        "GJSON": "valid",
+        "Description": "Email is valid.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/ipqs/domainAgeInYears",
+        "Enabled": true,
+        "GJSON": "domain_age.age_in_years",
+        "Description": "Email domain age in years.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/ipqs/isLeaked",
+        "Enabled": true,
+        "GJSON": "leaked",
+        "Description": "Email has been found in pastebin.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/ipqs/isDisposable",
+        "Enabled": true,
+        "GJSON": "disposable",
+        "Description": "This email domain is used for disposable and/or fake email accounts.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/ipqs/emailAgeDate",
+        "Enabled": true,
+        "GJSON": "first_seen.iso",
+        "Description": "Email first seen age.",
+        "Type": "Date"
+    },
+    {
+        "Item": "email/ipqs/domainAgeInDays",
+        "Enabled": true,
+        "GJSON": "domain_age.age_in_days",
+        "Description": "Email domain age in days.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/ipqs/risk",
+        "Enabled": true,
+        "GJSON": "fraud_score",
+        "Description": "Email fraud score from IpQualityScore",
+        "Type": "Float"
+    },
+    {
+        "Item": "email/ipqs/isGeneric",
+        "Enabled": true,
+        "GJSON": "generic",
+        "Description": "Email is generic or easily used for anonymization.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/ipqs/firstSeenHuman",
+        "Enabled": true,
+        "GJSON": "first_seen.human",
+        "Description": "Email first scanned on the internet age.",
+        "Type": "String"
+    },
+    {
+        "Item": "email/ipqs/emailAgeInDays",
+        "Enabled": true,
+        "GJSON": "first_seen.age_in_days",
+        "Description": "Email first seen on the internet age in days.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/ipqs/emailAgeInYears",
+        "Enabled": true,
+        "GJSON": "first_seen.age_in_years",
+        "Description": "Email first seen on the internet age in years.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "email/ipqs/isValidDNS",
+        "Enabled": true,
+        "GJSON": "dns_valid",
+        "Description": "Email domain has valid DNS MX records.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/ipqs/isHoneyPot",
+        "Enabled": true,
+        "GJSON": "honeypot",
+        "Description": "Email is a honeypot used to trap spammers.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/ipqs/isMalicious",
+        "Enabled": true,
+        "GJSON": "recent_abuse",
+        "Description": "Email has recent abuse reported.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "email/ipqs/domainAgeHuman",
+        "Enabled": true,
+        "GJSON": "domain_age.human",
+        "Description": "Email domain age human readable.",
+        "Type": "String"
+    },
+    {
+        "Item": "email/ipqs/domainAgeDate",
+        "Enabled": true,
+        "GJSON": "domain_age.iso",
+        "Description": "Email domain age.",
+        "Type": "Date"
+    },
+    {
+        "Item": "email/ipqs/isSuspiciousEmail",
+        "Enabled": true,
+        "GJSON": "suspect",
+        "Description": "Email is suspicious.",
+        "Type": "Boolean"
+    }
+]

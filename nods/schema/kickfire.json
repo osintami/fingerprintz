@@ -1,0 +1,142 @@
+[
+    {
+        "Item": "ip/kickfire/phone",
+        "Enabled": true,
+        "GJSON": "data.0.phone",
+        "Description": "Company phone number.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/employees",
+        "Enabled": true,
+        "GJSON": "data.0.employees",
+        "Description": "Number of employees.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "ip/kickfire/utcOffset",
+        "Enabled": true,
+        "GJSON": "data.0.utcOffset",
+        "Description": "UTC offset",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/isISP",
+        "Enabled": true,
+        "GJSON": "data.0.isISP",
+        "Description": "IPp is an ISP",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/kickfire/isWifi",
+        "Enabled": true,
+        "GJSON": "data.0.isWifi",
+        "Description": "IP is WIFI.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/kickfire/company",
+        "Enabled": true,
+        "GJSON": "data.0.companyName",
+        "Description": "Company name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/website",
+        "Enabled": true,
+        "GJSON": "data.0.website",
+        "Description": "Company website.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/region",
+        "Enabled": true,
+        "GJSON": "data.0.regionShort",
+        "Description": "Region",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/revenue",
+        "Enabled": true,
+        "GJSON": "data.0.revenue",
+        "Description": "Revenue.",
+        "Type": "Integer"
+    },
+    {
+        "Item": "ip/kickfire/stockSymbol",
+        "Enabled": true,
+        "GJSON": "data.0.stockSymbol",
+        "Description": "Stock ticker symbol.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/timezoneId",
+        "Enabled": true,
+        "GJSON": "data.0.timeZoneId",
+        "Description": "Timezone Id",
+        "Type": "Integer"
+    },
+    {
+        "Item": "ip/kickfire/longitude",
+        "Enabled": true,
+        "GJSON": "data.0.longitude",
+        "Description": "Longitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/kickfire/postal",
+        "Enabled": true,
+        "GJSON": "data.0.postal",
+        "Description": "Zip code",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/latitude",
+        "Enabled": true,
+        "GJSON": "data.0.latitude",
+        "Description": "Latitude",
+        "Type": "Float"
+    },
+    {
+        "Item": "ip/kickfire/timezoneName",
+        "Enabled": true,
+        "GJSON": "data.0.timeZoneName",
+        "Description": "Timezone",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/dstOffset",
+        "Enabled": true,
+        "GJSON": "data.0.dstOffset",
+        "Description": "DST offset",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/isMobile",
+        "Enabled": true,
+        "GJSON": "data.0.isMobile",
+        "Description": "IP is mobile.",
+        "Type": "Boolean"
+    },
+    {
+        "Item": "ip/kickfire/country",
+        "Enabled": true,
+        "GJSON": "data.0.countryShort",
+        "Description": "ISO country code",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/tradeName",
+        "Enabled": true,
+        "GJSON": "data.0.tradeName",
+        "Description": "Company trade name.",
+        "Type": "String"
+    },
+    {
+        "Item": "ip/kickfire/city",
+        "Enabled": true,
+        "GJSON": "data.0.city",
+        "Description": "City name.",
+        "Type": "String"
+    }
+]

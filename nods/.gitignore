@@ -1,0 +1,7 @@
+nods
+log
+coverage
+test.log
+.env.personal
+__debug_bin
+client

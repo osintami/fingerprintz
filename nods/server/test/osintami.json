@@ -1,0 +1,17 @@
+[
+        {
+            "Item": "rule/osintami/isBlacklisted",
+            "Enabled": true,
+            "GJSON": "isBlacklisted",
+            "Query": "[ip/ipsum/blacklist.isBlacklisted] || [ip/uhb/blacklist.isBlacklisted]",
+            "Description": "This IP address is blacklisted by one or more sources.",
+            "Type": "Boolean"
+        },
+        {
+            "Item": "browser/osintami/major",
+            "Enabled": true,
+            "GJSON": "UserAgent.Major",
+            "Description": "User agent major version",
+            "Type": "String"
+        }
+    ]

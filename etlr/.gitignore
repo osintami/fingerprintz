@@ -1,0 +1,5 @@
+.env.personal
+etlr
+__debug_bin
+etl/test/data
+*.log

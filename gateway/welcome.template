@@ -1,0 +1,142 @@
+<p>Thank you for signing up for an OSINTAMI Basic subscription.</p>
+
+<table>
+<tr><td>Name</td><td>$name</td></tr>
+<tr><td>Contact</td><td>$email</td></tr>
+<tr><td>Token</td><td>$token</td></tr>
+</table>
+
+<br>
+<p><b>Public Rules</b></p>
+
+<p>curl https://api.osintami.com/data/schema?csv=true -H "X-Api-Key: $token"</p>
+
+</br>
+<table class="table table-bordered table-hover table-condensed">
+
+<tr>
+<td>ITEM</td>
+<td>ENABLED</td>
+<td>TYPE</td>
+<td>DESCRIPTION</td>
+</tr>
+
+
+<tbody>
+
+<tr>
+<td>rule/osintami/isAnonymous</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>Tor, VPN or Proxy in use.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isBlacklisted</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>This IP address is blacklisted by one or more sources.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isBot</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>This IP address is being used by a software bot.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isCloudNode</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>This IP address belongs to a cloud provider.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isHuman</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>Not a known bot, crawler or code running in the cloud.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isOutsideUSA</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>USA only.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isProxy</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>This IP address belongs to a proxy provider.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isTor</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>This IP address belongs to an active Tor Exit node.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isUSA</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>USA only.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isVPN</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>This IP address belongs to a VPN provider.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/location</td>
+<td>true</td>
+<td>JSON&emsp;</td>
+<td>Latitude, longtitude, city, country, continent.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isBurnerPhone</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>Phone number belongs to a burner/disposable plan.  Input parameter is phone.</td>
+</tr>
+
+<tr>
+<td>rule/osintami/isSignupSafe</td>
+<td>true</td>
+<td>Boolean&emsp;</td>
+<td>Signup review.  Input parameters are ip, email, domain, and phone.</td>
+</tr>
+
+</tbody></table>
+
+<p><b>Execute a Rule</b></p>
+
+<p>curl https://api.osintami.com/data/rule/osintami/isCloudNode?ip=34.173.187.95 -H "X-Api-Key: $token"</p>
+{
+<br>&emsp;     "Item": "rule/osint/isCloudNode",
+<br>&emsp;     "Result": {
+<br>&emsp;&emsp;         "Type": 1,
+<br>&emsp;&emsp;         "Bool": true
+<br>&emsp;    },
+<br>&emsp;    "Keys": {
+<br>&emsp;&emsp;        "ip": "34.173.187.95"
+<br>&emsp;    },
+<br>&emsp;    "Error": ""
+<br>
+}
+
+<p>
+The OSINTAMI Basic subscription is rate limited.  You are hereby granted a license to use the OSINTAMI APIs
+<br>
+and associated data for internal use only.  Mining/reselling OSINTAMI data in any form is prohibited.<br>
+</p>
+
+Sincerely,<br>The OSINTAMI Team
