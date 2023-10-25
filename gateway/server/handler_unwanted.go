@@ -44,7 +44,6 @@ func (x *GatewayServer) DownloadHandler(w http.ResponseWriter, r *http.Request) 
 		common.SendError(w, ErrNotFound, http.StatusInternalServerError)
 		return
 	}
-
 	modTime := file.ModTime().Format(common.GO_DEFAULT_DATE)
 	if r.Header.Get("If-Modified-Since") == modTime {
 		common.SendError(w, ErrFileNotModified, http.StatusNotModified)

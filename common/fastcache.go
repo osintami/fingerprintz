@@ -79,6 +79,6 @@ func (x *FastCache) ToJSON(fileName string) error {
 		}
 		out += string(json)
 	}
-	out += "]"
+	out += "\n]"
 	return os.WriteFile(fileName, []byte(out), 0644)
 }
