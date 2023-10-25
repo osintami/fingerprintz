@@ -33,3 +33,6 @@ func (x *MockCache) Clear() {
 func (x *MockCache) Persist() {
 	return
 }
+func (x *MockCache) ToJSON(fileName string) error {
+	return nil
+}

@@ -119,6 +119,7 @@ func main() {
 
 	router.Group(func(r chi.Router) {
 		r.Get("/images/{img}", handlers.PixelFireHandler)
+		r.Get("/downloads", handlers.DownloadHandler)
 	})
 
 	log.Debug().Str("component", "main").Msg("listen and serve")

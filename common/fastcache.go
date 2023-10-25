@@ -2,6 +2,8 @@
 package common
 
 import (
+	"encoding/json"
+	"os"
 	"strings"
 	"time"
 
@@ -13,6 +15,7 @@ type IFastCache interface {
 	Set(key string, value interface{}, duration time.Duration)
 	Clear()
 	Persist()
+	ToJSON(string) error
 }
 
 type FastCache struct {
@@ -65,4 +68,17 @@ func (x *FastCache) Delete(pattern string) {
 			x.cache.Delete(k)
 		}
 	}
+}
+
+func (x *FastCache) ToJSON(fileName string) error {
+	out := "[\n"
+	for k := range x.cache.Items() {
+		json, err := json.MarshalIndent(k, "", "    ")
+		if err != nil {
+			return err
+		}
+		out += string(json)
+	}
+	out += "]"
+	return os.WriteFile(fileName, []byte(out), 0644)
 }
