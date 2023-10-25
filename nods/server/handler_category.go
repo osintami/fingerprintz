@@ -4,7 +4,6 @@ package server
 import (
 	"fmt"
 	"net/http"
-	"strconv"
 	"text/tabwriter"
 
 	"github.com/osintami/fingerprintz/common"
@@ -28,13 +27,14 @@ func (x *NormalizedDataServer) CategoryHandler(w http.ResponseWriter, r *http.Re
 		return
 	}
 
+	wantCSV := keys["csv"] == "true" || keys["csv"] == "TRUE" || keys["csv"] == "t"
+
 	outputs, err := x.router.CategoryValues(r.Context(), categoryName, keys)
 	if err != nil {
 		common.SendError(w, err, http.StatusBadRequest)
 		return
 	}
 
-	wantCSV, _ := strconv.ParseBool(keys["csv"])
 	if !wantCSV {
 		common.SendPrettyJSON(w, outputs)
 		return
