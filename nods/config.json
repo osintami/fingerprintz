@@ -6,6 +6,11 @@
             "Enabled": true
         },
         {
+            "Name": "unwanted",
+            "Database": "mmdb",
+            "Enabled": true
+        },
+        {
             "Name": "stripe.apis",
             "Enabled": true,
             "Database": "mmdb"
@@ -367,7 +372,7 @@
             "Database": "byod",
             "API": {
                 "Name": "email.dehashed",
-                "URL": "https://api.dehashed.com/search?query=email:{email}",
+                "URL": "https://api.dehashed.com/search?query=email:{email}",un
                 "Method": "GET",
                 "Auth": {
                     "Name": "DEHASHED_USER_NAME",
