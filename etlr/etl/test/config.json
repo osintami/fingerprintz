@@ -299,5 +299,12 @@
         "File": "./test/source/maxmind.mmdb",
         "InputType": "mmdb",
         "OutputType": "mmdb"
+    },
+    {
+        "Name": "unwanted",
+        "Enabled": true,
+        "File": "./test/source/unwanted.json",
+        "InputType": "json",
+        "OutputType": "mmdb"
     }
 ]

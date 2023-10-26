@@ -24,6 +24,14 @@
         "Separator": ","
     },
     {
+        "Name": "unwanted",
+        "Enabled": true,
+        "URL": "https://api.osintami.com/downloads?name=unwanted&key={key}",
+        "ApiKey": "OSINTAMI_API_KEY",
+        "InputType": "json",
+        "OutputType": "mmdb"
+    },
+    {
         "Name": "maxmind",
         "Enabled": true,
         "InputType": "mmdb",

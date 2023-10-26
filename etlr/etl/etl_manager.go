@@ -90,7 +90,16 @@ func (x ETLManager) refreshDaily() {
 	x.Refresh("fakefilter")
 	x.Refresh("ip1sms")
 	x.Refresh("useragent")
-	x.Refresh("udger")
+	x.Refresh("udger.bot")
+	x.Refresh("udger.vpn")
+	x.Refresh("udger.proxy")
+	x.Refresh("udger.cloud")
+	x.Refresh("udger.crawler")
+	x.Refresh("udger.http")
+	x.Refresh("udger.mail")
+	x.Refresh("udger.ssh")
+	x.Refresh("udger.tor")
+	x.Refresh("unwanted")
 }
 
 func (x ETLManager) refreshWeekly() {
@@ -244,7 +253,8 @@ func (x *ETLManager) createInstance(source Source) (*ETLJob, error) {
 		extractor = maxmind
 		transformer = maxmind
 		loader = maxmind
-
+	case "unwanted":
+		transformer = NewUnwanted(writer)
 	default:
 		log.Error().Str("component", "etlr").Str("vendor", source.Name).Msg("ETLr not found")
 		return nil, ErrVendorNotFound

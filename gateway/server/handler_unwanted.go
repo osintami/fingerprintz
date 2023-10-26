@@ -59,7 +59,8 @@ func (x *GatewayServer) DownloadHandler(w http.ResponseWriter, r *http.Request) 
 		w.Header().Set("Content-Type", "application/octet-stream")
 		w.Header().Set("Last-Modified", modTime)
 		http.ServeFile(w, r, fileName)
-		x.cache.Clear()
+		// NOTE:  don't clear the cache until we have a better ETL pipeline to handle history
+		// x.cache.Clear()
 		return
 	}
 	common.SendError(w, err, http.StatusInternalServerError)

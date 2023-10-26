@@ -170,6 +170,7 @@ func TestSources(t *testing.T) {
 		"udger.http",
 		"udger.ssh",
 		"udger.mail",
+		"unwanted",
 		"useragent",
 		"ayra",
 	}

@@ -3,9 +3,7 @@ package main
 
 import (
 	"crypto/tls"
-	"fmt"
 	"net/http"
-	"os"
 
 	"github.com/go-resty/resty/v2"
 	"github.com/osintami/fingerprintz/common"
@@ -17,11 +15,13 @@ import (
 
 func main() {
 
-	if len(os.Args) < 2 {
-		fmt.Println("USAGE: go run . source")
-		return
-	}
-	source := os.Args[1]
+	// if len(os.Args) < 2 {
+	// 	fmt.Println("USAGE: go run . source")
+	// 	return
+	// }
+	// source := os.Args[1]
+
+	source := "unwanted"
 
 	svrConfig := &server.ServerConfig{}
 	common.LoadEnv(true, true, svrConfig)

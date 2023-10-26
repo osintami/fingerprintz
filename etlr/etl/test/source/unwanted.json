@@ -1,0 +1,16 @@
+[
+    {
+        "IpAddr": "nope",
+        "UserAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36",
+        "IsUnwanted": true,
+        "Count": 2,
+        "LastSeen": "2023-10-25T20:40:22.422252473-05:00"
+    },
+    {
+        "IpAddr": "1.2.3.4",
+        "UserAgent": "Mozilla/5.0 zgrab/0.x",
+        "IsUnwanted": true,
+        "Count": 1,
+        "LastSeen": "2023-10-25T18:25:52.76967471-05:00"
+    }
+]

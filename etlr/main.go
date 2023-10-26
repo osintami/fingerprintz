@@ -30,7 +30,7 @@ func main() {
 	tools := etl.Toolbox{
 		Network:    utils.NewNetworkingHelper(resty),
 		FileSystem: utils.NewFSHelper(),
-		Secrets:    common.NewSecrets([]string{"ABUSEIPDB_API_KEY", "IP2LOCATION_API_KEY", "MAXMIND_API_KEY", "MAXMIND_ACCOUNT", "UDGER_API_KEY"}),
+		Secrets:    common.NewSecrets([]string{"ABUSEIPDB_API_KEY", "IP2LOCATION_API_KEY", "MAXMIND_API_KEY", "MAXMIND_ACCOUNT", "UDGER_API_KEY", "OSINTAMI_API_KEY"}),
 		CSV:        utils.NewCSVReader(),
 		Items:      make(map[string]etl.Item)}
 
