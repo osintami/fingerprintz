@@ -372,7 +372,7 @@
             "Database": "byod",
             "API": {
                 "Name": "email.dehashed",
-                "URL": "https://api.dehashed.com/search?query=email:{email}",un
+                "URL": "https://api.dehashed.com/search?query=email:{email}",
                 "Method": "GET",
                 "Auth": {
                     "Name": "DEHASHED_USER_NAME",
