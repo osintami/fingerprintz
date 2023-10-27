@@ -67,6 +67,7 @@ func (x *ETLManager) refreshHourly() {
 	x.Refresh("tormetrics")
 	x.Refresh("onionoo")
 	x.Refresh("danmeuk")
+	x.Refresh("unwanted")
 }
 
 func (x ETLManager) refreshDaily() {
@@ -99,7 +100,6 @@ func (x ETLManager) refreshDaily() {
 	x.Refresh("udger.mail")
 	x.Refresh("udger.ssh")
 	x.Refresh("udger.tor")
-	x.Refresh("unwanted")
 }
 
 func (x ETLManager) refreshWeekly() {
@@ -107,7 +107,6 @@ func (x ETLManager) refreshWeekly() {
 	x.Refresh("maxmind")
 	x.Refresh("ip2location")
 	x.Refresh("ip2proxy")
-	x.Refresh("udger")
 	x.Refresh("stripe-webhooks")
 	x.Refresh("stripe-apis")
 	x.Refresh("ip2location")
