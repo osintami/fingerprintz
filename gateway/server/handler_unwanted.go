@@ -51,8 +51,7 @@ func (x *GatewayServer) DownloadHandler(w http.ResponseWriter, r *http.Request) 
 	}
 	x.cache.Persist()
 
-	tm := time.Now()
-	fileName := fmt.Sprintf("%s_%d_%02d_%02d.%s", "unwanted", tm.Year(), tm.Month(), tm.Day(), "json")
+	fileName := x.snapshotName("unwanted")
 	err = x.cache.ToJSON(fileName)
 	if err == nil {
 		w.Header().Set("Content-Disposition", "attachment; filename="+fileName)
@@ -78,4 +77,9 @@ func (x *GatewayServer) logUnwantedGuests(r *http.Request) {
 			x.cache.Set(ip, &UnwantedInfo{IpAddr: ip, UserAgent: r.UserAgent(), IsUnwanted: true, Count: 1, LastSeen: time.Now()}, -1)
 		}
 	}
+}
+
+func (*GatewayServer) snapshotName(name string) string {
+	tm := time.Now()
+	return fmt.Sprintf("%s_%d_%02d_%02d.%s", "unwanted", tm.Year(), tm.Month(), tm.Day(), "json")
 }

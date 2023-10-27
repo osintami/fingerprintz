@@ -14,7 +14,7 @@ import (
 )
 
 func TestStripeInWhitelist(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	qParams := make(map[string]string)
 	qParams["stripe"] = "{\"payload\":true}"
 	r := common.BuildRequest(http.MethodPost, "/v1/stripe", nil, qParams)
@@ -25,7 +25,7 @@ func TestStripeInWhitelist(t *testing.T) {
 }
 
 func TestStripeNotInWhitelist(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	qParams := make(map[string]string)
 	qParams["stripe"] = "{\"payload\":true}"
 	r := common.BuildRequest(http.MethodPost, "/v1/stripe", nil, qParams)
@@ -36,7 +36,7 @@ func TestStripeNotInWhitelist(t *testing.T) {
 }
 
 func TestStripeWhitelistNodsErrorInHardcodedWhitelist(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	table := make(map[string]bool)
 	table["Item"] = true
 	svr.oc = NewMockNods(table)
@@ -50,7 +50,7 @@ func TestStripeWhitelistNodsErrorInHardcodedWhitelist(t *testing.T) {
 }
 
 func TestStripeWhitelistNodsErrorNotInHardcodedWhitelist(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	table := make(map[string]bool)
 	table["Item"] = true
 	svr.oc = NewMockNods(table)
@@ -64,7 +64,7 @@ func TestStripeWhitelistNodsErrorNotInHardcodedWhitelist(t *testing.T) {
 }
 
 func TestStripeHandlerJunkEvent(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	qParams := make(map[string]string)
 	qParams["stripe"] = "{\"payload\":true}"
 	r := common.BuildRequest(http.MethodPost, "/v1/stripe", nil, qParams)
@@ -78,7 +78,7 @@ func TestStripeHandlerJunkEvent(t *testing.T) {
 }
 
 func TestStripeHandlerNotInWhitelist(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	qParams := make(map[string]string)
 	qParams["stripe"] = "{\"payload\":true}"
 	r := common.BuildRequest(http.MethodPost, "/v1/stripe", nil, qParams)
@@ -92,7 +92,7 @@ func TestStripeHandlerNotInWhitelist(t *testing.T) {
 }
 
 func TestStripeHandlerCorruptEvent(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := httptest.NewRequest(
 		http.MethodPost,
 		"/v1/stripe",
@@ -108,7 +108,7 @@ func TestStripeHandlerCorruptEvent(t *testing.T) {
 }
 
 func TestStripeHandlerEmptyEvent(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	r := httptest.NewRequest(
 		http.MethodPost,
@@ -125,7 +125,7 @@ func TestStripeHandlerEmptyEvent(t *testing.T) {
 }
 
 func TestStripeChargeSucceededEvent(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := httptest.NewRequest(
 		http.MethodPost,
 		"/v1/stripe",
@@ -141,7 +141,7 @@ func TestStripeChargeSucceededEvent(t *testing.T) {
 }
 
 func TestStripeChargeSucceededCreateAccountFail(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	table := make(map[string]bool)
 	table["CreateAccount"] = true
@@ -163,7 +163,7 @@ func TestStripeChargeSucceededCreateAccountFail(t *testing.T) {
 }
 
 func TestStripeKnownUser(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := httptest.NewRequest(
 		http.MethodPost,
 		"/v1/stripe",
@@ -179,7 +179,7 @@ func TestStripeKnownUser(t *testing.T) {
 }
 
 func TestStripeUnknownUser(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	failMap := make(map[string]bool)
 	failMap["FindByEmail"] = true
 	svr.accounts = NewMockAccounts(failMap)
@@ -198,7 +198,7 @@ func TestStripeUnknownUser(t *testing.T) {
 }
 
 func TestStripeSubscriptionCanceledEvent(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := httptest.NewRequest(
 		http.MethodPost,
 		"/v1/stripe",
@@ -214,7 +214,7 @@ func TestStripeSubscriptionCanceledEvent(t *testing.T) {
 }
 
 func TestStripeUnknownEvent(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := httptest.NewRequest(
 		http.MethodPost,
 		"/v1/stripe",

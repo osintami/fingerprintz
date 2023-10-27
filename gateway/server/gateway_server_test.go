@@ -11,12 +11,13 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func createServer() *GatewayServer {
+func createServer(fails map[string]bool) *GatewayServer {
 	failMap := make(map[string]bool)
 	return NewGatewayServer(
 		NewMockReverseProxy(),
 		NewMockNods(failMap),
-		common.NewPersistentCache("/tmp/unwanted.db"),
+		//common.NewPersistentCache("/tmp/unwanted.db"),
+		NewMockCache(fails),
 		NewMockAccounts(failMap),
 		NewMockCalls(failMap),
 		NewMockPixels(failMap),
@@ -24,7 +25,7 @@ func createServer() *GatewayServer {
 }
 
 func TestReverseProxyHandler(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "admin_api_key")
@@ -34,7 +35,7 @@ func TestReverseProxyHandler(t *testing.T) {
 }
 
 func TestReverseProxyHandlerJackedConfig(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	r := common.BuildRequest(http.MethodGet, "/corrupt/list", nil, nil)
 	r.Header.Add("X-Api-Key", "user_api_key")
@@ -45,7 +46,7 @@ func TestReverseProxyHandlerJackedConfig(t *testing.T) {
 }
 
 func TestReverseProxyHandlerUnsupportedRoute(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	r := common.BuildRequest(http.MethodGet, "/nope", nil, nil)
 	r.Header.Add("X-Api-Key", "admin_api_key")
@@ -56,7 +57,7 @@ func TestReverseProxyHandlerUnsupportedRoute(t *testing.T) {
 }
 
 func TestReverseProxyHandlerUnknownUser(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	w := httptest.NewRecorder()
@@ -66,7 +67,7 @@ func TestReverseProxyHandlerUnknownUser(t *testing.T) {
 }
 
 func TestReverseProxyHandlerAdminRequired(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	r := common.BuildRequest(http.MethodGet, "/admin/list", nil, nil)
 	r.Header.Add("X-Api-Key", "user_api_key")
@@ -77,7 +78,7 @@ func TestReverseProxyHandlerAdminRequired(t *testing.T) {
 }
 
 func TestBurnToken(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	// valid account
 	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
@@ -133,7 +134,7 @@ func TestAuditTrail(t *testing.T) {
 }
 
 func TestFindAccount(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 
 	// admin account
 	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
@@ -165,7 +166,7 @@ func TestFindAccount(t *testing.T) {
 }
 
 func TestFindAccountBadKey(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := common.BuildRequest(http.MethodGet, "/data/items", nil, nil)
 	r.Header.Add("X-Api-Key", "nope_api_key")
 	account, err := svr.findAccount(r)

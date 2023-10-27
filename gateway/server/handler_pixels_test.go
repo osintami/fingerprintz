@@ -11,7 +11,7 @@ import (
 )
 
 func TestPixelFireHandler(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := common.BuildRequest(http.MethodGet, "/images/any.png", nil, nil)
 
 	r.Header.Add("User-Agent", "test user agent")

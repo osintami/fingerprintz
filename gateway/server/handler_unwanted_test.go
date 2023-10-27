@@ -11,7 +11,7 @@ import (
 )
 
 func TestUnwantedHandler(t *testing.T) {
-	svr := createServer()
+	svr := createServer(nil)
 	r := common.BuildRequest(http.MethodGet, "/", nil, nil)
 	w := httptest.NewRecorder()
 	svr.UnwantedHandler(w, r)
