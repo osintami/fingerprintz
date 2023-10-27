@@ -90,6 +90,43 @@ func TestAccountCreateDuplicate(t *testing.T) {
 	assert.NotNil(t, err)
 }
 
+func TestAccountFindByIpAddr(t *testing.T) {
+	db, mock := common.CreateMockDatabase()
+	accounts, account := setupAccount(db)
+
+	// create an account
+	createAccount(t, mock, accounts, account)
+
+	// find the account
+	mock.ExpectQuery(regexp.QuoteMeta(`SELECT * FROM "accounts" WHERE "ip_addr" = $1 AND "accounts"."deleted_at" IS NULL ORDER BY "accounts"."id" LIMIT 1`)).
+		WithArgs(account.IpAddr).
+		WillReturnRows(sqlmock.NewRows([]string{"id", "created_at", "updated_at", "deleted_at", "name", "email", "ip_addr", "api_key", "tokens", "role", "last_payment", "enabled", "stripe_id"}).
+			AddRow(0, nil, nil, nil, account.Name, account.Email, account.IpAddr, account.ApiKey, account.Tokens, account.Role, account.LastPayment, account.Enabled, account.StripeId))
+
+	account, err := accounts.FindByIpAddr(context.TODO(), account.IpAddr)
+	assert.Nil(t, err)
+	assert.NotNil(t, account)
+
+	assert.Nil(t, mock.ExpectationsWereMet())
+}
+
+func TestAccountFindByIpAddrDoesNotExist(t *testing.T) {
+	db, mock := common.CreateMockDatabase()
+	accounts, account := setupAccount(db)
+
+	// create an account
+	createAccount(t, mock, accounts, account)
+
+	// find the account
+	mock.ExpectQuery(regexp.QuoteMeta(`SELECT * FROM "accounts" WHERE "ip_addr" = $1 AND "accounts"."deleted_at" IS NULL ORDER BY "accounts"."id" LIMIT 1`)).
+		WithArgs(account.IpAddr).
+		WillReturnError(gorm.ErrRecordNotFound)
+
+	account, err := accounts.FindByIpAddr(context.TODO(), account.IpAddr)
+	assert.Equal(t, gorm.ErrRecordNotFound, err)
+	assert.Nil(t, account)
+}
+
 func TestAccountFindByEmail(t *testing.T) {
 	db, mock := common.CreateMockDatabase()
 	accounts, account := setupAccount(db)
