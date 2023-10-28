@@ -75,9 +75,6 @@ func (x *FastCache) ToJSON(fileName string) error {
 	for _, v := range x.cache.Items() {
 		out = append(out, v.Object)
 	}
-	json, err := json.MarshalIndent(out, "", "    ")
-	if err != nil {
-		return err
-	}
+	json, _ := json.MarshalIndent(out, "", "    ")
 	return os.WriteFile(fileName, []byte(json), 0644)
 }

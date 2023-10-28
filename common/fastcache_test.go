@@ -57,3 +57,11 @@ func TestPersistentCache(t *testing.T) {
 
 	os.Remove("/tmp/test.db")
 }
+
+func TestFastCacheToJSON(t *testing.T) {
+	cache := NewFastCache()
+	cache.Set("test key", "test value", -1)
+	err := cache.ToJSON("/tmp/test.json")
+	assert.Nil(t, err)
+	os.Remove("/tmp/test.json")
+}

@@ -172,7 +172,7 @@ func (x *OSINTAMIClient) Whoami(ip string) (*WhoamiInfo, error) {
 
 func (x *OSINTAMIClient) Fingerprint(keys map[string]string) (string, error) {
 	inputs, _ := json.Marshal(keys)
-	resp, err := x.client.R().SetBody(inputs).Post(x.whoamiURL + "/v1/fingerprint/scan")
+	resp, err := x.client.R().SetBody(inputs).Get(x.whoamiURL + "/v1/fingerprint/scan")
 	if err != nil || resp.StatusCode() != http.StatusOK {
 		log.Error().Err(err).Str("component", "osintami").Int("status", resp.StatusCode()).Msg("osintami not reachable")
 		return "", ErrItemNotFound

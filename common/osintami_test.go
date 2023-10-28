@@ -77,50 +77,40 @@ func TestOsintamiWhoami(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.False(t, out.Tor)
 	assert.False(t, out.Blacklist)
-
-	// cleanup
-	httpmock.Deactivate()
 }
 
-// func TestOsintamiFingerprint(t *testing.T) {
-// 	hc := resty.New()
-// 	httpmock.ActivateNonDefault(hc.GetClient())
+func TestOsintamiFingerprint(t *testing.T) {
+	hc := resty.New()
+	httpmock.ActivateNonDefault(hc.GetClient())
 
-// 	oc := NewOSINTAMIClient(hc, "https://api.osintami.com")
+	oc := NewOSINTAMIClient(hc, "", "http://localhost:8083/whoami")
 
-// 	// login OSINT data API
-// 	content := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiMjAyMy0xMC0wM1QyMjozNzo1Ni43NTc4NTgyMi0wNjowMCIsImVoYXNoIjoiNjcxYThjOTQwNGFiNjM0Mjk2MTM2NWFhMDBjODIwYTQ0YzUwNGNhNWYxOWNhNGU4MTZmY2NmZmZjYjI2Y2I5YSIsImxhdGl0dWRlIjo0MS4yNTkxLCJsb25naXR1ZGUiOi05NS44NTE3LCJjaXR5IjoiQ291bmNpbCBCbHVmZnMiLCJjb3VudHJ5IjoiVVMiLCJpcCI6IjM0LjMxLjE3MS4yMSIsInVhIjoiZTJhNDkzNTRhNDQ0YzA1YmFlYzlmYjU0NjkwYTVjZWUyNmY4ZjM4YzI5MzIyYTgwNDE4YjgwMmViZGEwY2YyNSIsImh3aWQiOiIwMTIzNDU2Ny04OUFCQ0RFRi0wMTIzNDU2Ny04OUFCQ0RFRiIsIm5pZCI6IjBYMDAxMCIsInBpZCI6Im9zaW50YW1pIiwidmVyc2lvbiI6IjEuMC4wIiwiaXNzIjoib3NpbnRhbWkiLCJzdWIiOiJmaW5nZXJwcmludCIsImV4cCI6MTY5NjQ4MDY3NiwibmJmIjoxNjk2Mzk0Mjc2LCJpYXQiOjE2OTYzOTQyNzZ9.2g_qiH_Y-QtR4YmxfCZBFdEX3n8e40iTkMWkInHZG8s"
-// 	url := "https://api.osintami.com/data/fingerprint"
-// 	httpmock.RegisterResponder(
-// 		"POST", url, httpmock.NewStringResponder(http.StatusOK, content))
-// 	defer httpmock.DeactivateAndReset()
+	// fingerprint OSINT data API
+	content := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0aW1lIjoiMjAyMy0xMC0wM1QyMjozNzo1Ni43NTc4NTgyMi0wNjowMCIsImVoYXNoIjoiNjcxYThjOTQwNGFiNjM0Mjk2MTM2NWFhMDBjODIwYTQ0YzUwNGNhNWYxOWNhNGU4MTZmY2NmZmZjYjI2Y2I5YSIsImxhdGl0dWRlIjo0MS4yNTkxLCJsb25naXR1ZGUiOi05NS44NTE3LCJjaXR5IjoiQ291bmNpbCBCbHVmZnMiLCJjb3VudHJ5IjoiVVMiLCJpcCI6IjM0LjMxLjE3MS4yMSIsInVhIjoiZTJhNDkzNTRhNDQ0YzA1YmFlYzlmYjU0NjkwYTVjZWUyNmY4ZjM4YzI5MzIyYTgwNDE4YjgwMmViZGEwY2YyNSIsImh3aWQiOiIwMTIzNDU2Ny04OUFCQ0RFRi0wMTIzNDU2Ny04OUFCQ0RFRiIsIm5pZCI6IjBYMDAxMCIsInBpZCI6Im9zaW50YW1pIiwidmVyc2lvbiI6IjEuMC4wIiwiaXNzIjoib3NpbnRhbWkiLCJzdWIiOiJmaW5nZXJwcmludCIsImV4cCI6MTY5NjQ4MDY3NiwibmJmIjoxNjk2Mzk0Mjc2LCJpYXQiOjE2OTYzOTQyNzZ9.2g_qiH_Y-QtR4YmxfCZBFdEX3n8e40iTkMWkInHZG8s"
+	url := "http://localhost:8083/whoami/v1/fingerprint/scan"
+	httpmock.RegisterResponder(
+		"GET", url, httpmock.NewStringResponder(http.StatusOK, content))
+	defer httpmock.DeactivateAndReset()
 
-// 	keys := make(map[string]string)
-// 	keys["ip"] = "1.2.3.4"
-// 	keys["email"] = "1@2.com"
-// 	keys["ua"] = "test-user-agent"
-// 	keys["device"] = "test-device-id"
+	keys := make(map[string]string)
+	keys["ip"] = "1.2.3.4"
+	keys["email"] = "1@2.com"
+	keys["ua"] = "test-user-agent"
+	keys["device"] = "test-device-id"
 
-// 	out, err := oc.Fingerprint(keys)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, content, out)
+	out, err := oc.Fingerprint(keys)
+	assert.Nil(t, err)
+	assert.Equal(t, content, out)
 
-// 	// test HTTP error
-// 	url = "https://api.osintami.com/data/fingerprint"
-// 	httpmock.RegisterResponder(
-// 		"POST", url, httpmock.NewStringResponder(http.StatusInternalServerError, content))
+	// test HTTP error
+	url = "http://localhost:8083/whoami/v1/fingerprint/scan"
+	httpmock.RegisterResponder(
+		"GET", url, httpmock.NewStringResponder(http.StatusInternalServerError, content))
 
-// 	for k := range keys {
-// 		delete(keys, k)
-// 	}
-
-// 	out, err = oc.Fingerprint(keys)
-// 	assert.NotNil(t, err)
-// 	assert.Equal(t, "", out)
-
-// 	// cleanup
-// 	httpmock.Deactivate()
-// }
+	out, err = oc.Fingerprint(keys)
+	assert.NotNil(t, err)
+	assert.Equal(t, "", out)
+}
 
 func TestDataType(t *testing.T) {
 	dataType := Null
