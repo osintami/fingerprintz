@@ -42,7 +42,7 @@ func main() {
 	router.Init()
 
 	rules := server.NewRuleProvider(router, schema)
-	handlers := server.NewNormalizedDataServer(schema, router, secrets, rules)
+	handlers := server.NewNormalizedDataServer(schema, router, secrets, server.NewComplexProvider(rules))
 	mux := chi.NewMux()
 	mux.Route(svrConfig.PathPrefix, func(r chi.Router) {
 		r.Use(middleware.RequestID)

@@ -88,7 +88,7 @@ func (x *DataRouter) DataValue(ctx context.Context, dataURI *DataURI, inputs com
 	// find the source instance
 	source := x.findSourceInstance(dataURI.SourceName)
 	if source == nil {
-		log.Error().Err(ErrSourceNotFound).Str("component", "router").Str("source", dataURI.SourceName).Msg("vendor not found")
+		log.Error().Err(ErrSourceNotFound).Str("component", "router").Str("source", dataURI.SourceName).Msg("source not found")
 		return x.response.EmptyResponse(common.Null, dataURI.ItemName, inputs, ErrSourceNotFound), ErrSourceNotFound
 	}
 
