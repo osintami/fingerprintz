@@ -164,6 +164,8 @@ func (x *ETLManager) createInstance(source Source) (*ETLJob, error) {
 	}
 
 	switch source.Name {
+	case "lightswitch.junk":
+		transformer = NewLightswitchJunk(writer)
 	case "ayra":
 		transformer = NewAyra(writer)
 	case "test":

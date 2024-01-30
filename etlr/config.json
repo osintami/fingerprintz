@@ -1,7 +1,15 @@
 [
     {
-        "Name": "stripe.webhooks",
+        "Name": "lightswitch.junk",
         "Enabled": true,
+        "URL": "https://www.github.developerdan.com/hosts/lists/hate-and-junk-extended.txt",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": " "
+    },
+    {
+        "Name": "stripe.webhooks",
+        "Enabled": false,
         "URL": "https://stripe.com/files/ips/ips_webhooks.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -9,7 +17,7 @@
     },
     {
         "Name": "stripe.apis",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://stripe.com/files/ips/ips_api.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -17,7 +25,7 @@
     },
     {
         "Name": "tormetrics",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://check.torproject.org/torbulkexitlist",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -25,7 +33,7 @@
     },
     {
         "Name": "unwanted",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://api.osintami.com/downloads?name=unwanted&key={key}",
         "ApiKey": "OSINTAMI_API_KEY",
         "InputType": "json",
@@ -33,20 +41,20 @@
     },
     {
         "Name": "maxmind",
-        "Enabled": true,
+        "Enabled": false,
         "InputType": "mmdb",
         "OutputType": "mmdb"
     },
     {
         "Name": "useragent",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://raw.githubusercontent.com/ua-parser/uap-core/master/regexes.yaml",
         "InputType": "yaml",
         "OutputType": "yaml"
     },
     {
         "Name": "ip1sms",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://raw.githubusercontent.com/iP1SMS/disposable-phone-numbers/master/number-list.json",
         "InputType": "json",
         "OutputType": "fast",
@@ -54,7 +62,7 @@
     },
     {
         "Name": "digitalocean",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "http://digitalocean.com/geo/google.csv",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -62,7 +70,7 @@
     },
     {
         "Name": "cloudflare",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://www.cloudflare.com/ips-v4",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -70,35 +78,35 @@
     },
     {
         "Name": "google",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://www.gstatic.com/ipranges/cloud.json",
         "InputType": "json",
         "OutputType": "mmdb"
     },
     {
         "Name": "oracle",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://docs.oracle.com/en-us/iaas/tools/public_ip_ranges.json",
         "InputType": "json",
         "OutputType": "mmdb"
     },
     {
         "Name": "amazon",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://ip-ranges.amazonaws.com/ip-ranges.json",
         "InputType": "json",
         "OutputType": "mmdb"
     },
     {
         "Name": "azure",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20231225.json",
         "InputType": "json",
         "OutputType": "mmdb"
     },
     {
         "Name": "fakefilter",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://raw.githubusercontent.com/7c/fakefilter/main/txt/data.txt",
         "InputType": "txt",
         "OutputType": "fast",
@@ -106,7 +114,7 @@
     },
     {
         "Name": "ip2location",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://www.ip2location.com/download?token={key}&file=DB1LITECSV",
         "ApiKey": "IP2LOCATION_API_KEY",
         "InputType": "zip",
@@ -115,7 +123,7 @@
     },
     {
         "Name": "ip2proxy",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://www.ip2location.com/download?token={key}&file=PX2LITECSV",
         "ApiKey": "IP2LOCATION_API_KEY",
         "InputType": "zip",
@@ -124,7 +132,7 @@
     },
     {
         "Name": "uhb",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://hosts.ubuntu101.co.za/ips.list",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -132,7 +140,7 @@
     },
     {
         "Name": "abuseipdb",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://api.abuseipdb.com/api/v2/blacklist?limit=10000&confidenceMinimum=90&key={key}",
         "ApiKey": "ABUSEIPDB_API_KEY",
         "InputType": "json",
@@ -221,7 +229,7 @@
     },
     {
         "Name": "ipsum",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -229,7 +237,7 @@
     },
     {
         "Name": "avastel",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "http://antoinevastel.com/data/avastel-ips-7d.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -237,7 +245,7 @@
     },
     {
         "Name": "onionoo",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://onionoo.torproject.org/details",
         "InputType": "json",
         "OutputType": "mmdb",
@@ -245,7 +253,7 @@
     },
     {
         "Name": "danmeuk",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://www.dan.me.uk/torlist?exit",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -253,7 +261,7 @@
     },
     {
         "Name": "droplist",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://www.spamhaus.org/drop/drop.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -261,7 +269,7 @@
     },
     {
         "Name": "edroplist",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://www.spamhaus.org/drop/edrop.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -269,7 +277,7 @@
     },
     {
         "Name": "dshield",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://isc.sans.edu/block.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -277,7 +285,7 @@
     },
     {
         "Name": "x4bnet.vpn",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://raw.githubusercontent.com/X4BNet/lists_vpn/main/ipv4.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -285,7 +293,7 @@
     },
     {
         "Name": "x4bnet.tor",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://raw.githubusercontent.com/X4BNet/lists_torexit/main/ipv4.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -293,7 +301,7 @@
     },
     {
         "Name": "x4bnet.troll",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://raw.githubusercontent.com/X4BNet/lists_stopforumspam/main/ipv4.txt",
         "InputType": "csv",
         "OutputType": "mmdb",
@@ -301,7 +309,7 @@
     },
     {
         "Name": "ayra",
-        "Enabled": true,
+        "Enabled": false,
         "URL": "https://cable.ayra.ch/ip/global.json",
         "InputType": "json",
         "OutputType": "mmdb"

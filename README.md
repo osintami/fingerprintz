@@ -22,8 +22,8 @@ ACLs are role based and once authenticated via API key the role is pass to the s
 * token counter and enforcer, returns 412 when well over the limit
 * pixel fire API for website cookies and demandgen funnel tracking
 * throttling using go-chi/httprate on a per API key basis
-* stripe payment integration
-* integration with NODS to pre-filter out non-desireables (tor, cloud nodes, proxy, vpn, bot, blacklisted, etc.)
+* Stripe payment integration (new account, monthly subscription paid, cancelled)
+* integration with NODS possible to pre-filter out non-desireables (tor, cloud nodes, proxy, vpn, bot, blacklisted, etc.)
 
 
 ### ETLr
@@ -37,6 +37,22 @@ into a consistent format for use in NODS for data items and rules.
 * builds data dictionary for each source as part of a ETL cycle
 * publishes data and dictionary
 
+#### Add New ETLr Job
+1) See config.json for examples of supported input types
+2) Look in associated source_<name>.go to see how they are parsed
+3) Copy closest match source_<name>.go to a new name and edit accordingly
+4) Define data collection items and code up parser
+5) Disable all entries in config.json except the new entry (or create a new file)
+6) Add new source to etl_manager.go under createInstance(source Source)
+7) Fire up the ETLr in the debugger
+8) Force a data collection run with http://127.0.0.1:{port from .env}/etlr/v1/refresh/{name}
+9) cd etlr/etl
+10) ./test.sh
+11) check for failing tests and look for test coverage of your new source
+12) create a test data set in etlr/etl/test/source/{name}.{type}
+13) edit sources_all_test.go and add your source to TestSources(t *testing.T)
+14) add your source to the etlr/etl/test/config.json file
+15) run the tests again, debug, fix up and ensure 100% coverage of your new source
 
 ### Normalized OSINT Data Server
 Written in Go, the NODS uses a URI to access data items, which is all documented in a data dictionary.  Rules

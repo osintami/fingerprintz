@@ -6,6 +6,11 @@
             "Enabled": true
         },
         {
+            "Name": "lightswitch.junk",
+            "Database": "mmdb",
+            "Enabled": true
+        },
+        {
             "Name": "unwanted",
             "Database": "mmdb",
             "Enabled": true

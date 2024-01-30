@@ -1,5 +1,13 @@
 [
     {
+        "Name": "lightswitch.junk",
+        "Enabled": true,
+        "File": "./test/source/lightswitch.junk.txt",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": " "
+    },
+    {
         "Name": "ayra",
         "Enabled": true,
         "File": "./test/source/ayra.json",
