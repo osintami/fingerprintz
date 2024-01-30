@@ -45,7 +45,7 @@ into a consistent format for use in NODS for data items and rules.
 5) Disable all entries in config.json except the new entry (or create a new file)
 6) Add new source to etl_manager.go under createInstance(source Source)
 7) Fire up the ETLr in the debugger
-8) Force a data collection run with http://127.0.0.1:{port from .env}/etlr/v1/refresh/{name}
+8) Force a data collection run with http://127.0.0.1:8081/etlr/v1/refresh/{name}
 9) cd etlr/etl
 10) ./test.sh
 11) check for failing tests and look for test coverage of your new source
@@ -53,6 +53,9 @@ into a consistent format for use in NODS for data items and rules.
 13) edit sources_all_test.go and add your source to TestSources(t *testing.T)
 14) add your source to the etlr/etl/test/config.json file
 15) run the tests again, debug, fix up and ensure 100% coverage of your new source
+16) configure nods/config.json to include the new source
+17) test your new data items http://localhost:8082/nods/v1/data/ip/{name}/{item}?ip=187.190.197.253
+as found in the data/{name}.json item schema file
 
 ### Normalized OSINT Data Server
 Written in Go, the NODS uses a URI to access data items, which is all documented in a data dictionary.  Rules

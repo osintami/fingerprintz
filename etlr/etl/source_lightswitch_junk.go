@@ -29,34 +29,36 @@ func (x *LightswitchJunk) Transform(job IETLJob) error {
 			return nil
 		}
 		for _, ip := range addrs {
-			cidr := &net.IPNet{
-				IP:   ip,
-				Mask: ip.DefaultMask(),
-			}
-			entry := mmdbtype.Map{
-				"lightswitch": mmdbtype.Map{
-					"blacklist": mmdbtype.Map{
-						"isHateOrJunk":   mmdbtype.Bool(true),
-						"lastReportedAt": mmdbtype.String(lastReportedAt),
+			cidr, err := job.Tools().Network.ParseCIDR(ip.String())
+			if err != nil {
+				log.Error().Err(err).Str("component", job.Source().Name).Str("cidr", values[1]).Msg("parse cidr")
+				continue
+			} else {
+				entry := mmdbtype.Map{
+					"lightswitch": mmdbtype.Map{
+						"blacklist": mmdbtype.Map{
+							"isHateOrJunk":   mmdbtype.Bool(true),
+							"lastReportedAt": mmdbtype.String(lastReportedAt),
+						},
 					},
-				},
-			}
+				}
 
-			x.writer.Insert(cidr, entry)
+				x.writer.Insert(cidr, entry)
+			}
 		}
 		return nil
 	})
 
 	job.Tools().Items["lightswitch.blacklist.isHateOrJunk"] = Item{
-		Item:        "ip/lightswitch/blacklist.isHateOrJunk",
+		Item:        "ip/lightswitch.junk/blacklist.isHateOrJunk",
 		Enabled:     true,
 		GJSON:       "lightswitch.blacklist.isHateOrJunk",
 		Description: "IP is hate or junk related.",
 		Type:        common.Boolean.String()}
 	job.Tools().Items["lightswitch.blacklist.lastReportedAt"] = Item{
-		Item:        "ip/lightswitch/blacklist.lastReportedAt",
+		Item:        "ip/lightswitch.junk/blacklist.lastReportedAt",
 		Enabled:     true,
-		GJSON:       "lightswitch.junk.lastReportedAt",
+		GJSON:       "lightswitch.blacklist.lastReportedAt",
 		Description: "Last seen date/time.",
 		Type:        common.Date.String()}
 	return err
