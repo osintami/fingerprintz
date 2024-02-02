@@ -39,7 +39,7 @@ into a consistent format for use in NODS for data items and rules.
 
 #### Add New ETLr Job
 1) See config.json for examples of supported input types
-2) Look in associated source_<name>.go to see how they are parsed
+2) Look in associated source_<name>.go files to see how they are parsed
 3) Copy closest match source_<name>.go to a new name and edit accordingly
 4) Define data collection items and code up parser
 5) Disable all entries in config.json except the new entry (or create a new file)
