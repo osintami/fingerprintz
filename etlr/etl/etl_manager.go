@@ -112,6 +112,7 @@ func (x ETLManager) refreshWeekly() {
 	x.Refresh("ip2location")
 	x.Refresh("ip2proxy")
 	x.Refresh("ayra")
+	x.Refresh("lightswitch.junk")
 }
 
 func (x *ETLManager) RefreshAll() {

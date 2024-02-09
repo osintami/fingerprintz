@@ -38,23 +38,24 @@ into a consistent format for use in NODS for data items and rules.
 * publishes data and dictionary
 
 #### Add New ETLr Job
-1) See config.json for examples of supported input types
-2) Look in associated source_<name>.go files to see how they are parsed
-3) Copy closest match source_<name>.go to a new name and edit accordingly
-4) Define data collection items and code up parser
-5) Disable all entries in config.json except the new entry (or create a new file)
-6) Add new source to etl_manager.go under createInstance(source Source)
-7) Fire up the ETLr in the debugger
-8) Force a data collection run with http://127.0.0.1:8081/etlr/v1/refresh/{name}
-9) cd etlr/etl
-10) ./test.sh
-11) check for failing tests and look for test coverage of your new source
-12) create a test data set in etlr/etl/test/source/{name}.{type}
-13) edit sources_all_test.go and add your source to TestSources(t *testing.T)
-14) add your source to the etlr/etl/test/config.json file
-15) run the tests again, debug, fix up and ensure 100% coverage of your new source
-16) configure nods/config.json to include the new source
-17) test your new data items http://localhost:8082/nods/v1/data/ip/{name}/{item}?ip=187.190.197.253
+* See config.json for examples of supported input types
+* Look in associated source_<name>.go files to see how they are parsed
+* Copy closest match source_<name>.go to a new name and edit accordingly
+* Define data collection items and code up the source parser and meta data creation
+* Disable all entries in config.json except the new entry (or create a new file)
+* Add new source to etl_manager.go under createInstance(source Source)
+* Add new source to the appropritate refreshHourly, Daily, Weekly API in server/etl_manager.go
+* Fire up the ETLr in the debugger
+* Force a data collection run with http://127.0.0.1:8081/etlr/v1/refresh/{name}
+* cd etlr/etl
+* ./test.sh
+* Check for failing tests and look for test coverage of your new source
+* Create a test data set in etlr/etl/test/source/{name}.{type}
+* Edit sources_all_test.go and add your source to TestSources(t *testing.T)
+* Add your source to the etlr/etl/test/config.json file
+* Run the tests again, debug, fix up and ensure 100% coverage of your new source
+* Configure nods/config.json to include the new source
+* Test your new data items http://localhost:8082/nods/v1/data/ip/{name}/{item}?ip=187.190.197.253
 as found in the data/{name}.json item schema file
 
 ### Normalized OSINT Data Server
