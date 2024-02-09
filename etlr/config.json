@@ -100,7 +100,7 @@
     {
         "Name": "azure",
         "Enabled": false,
-        "URL": "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20231225.json",
+        "URL": "https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20240205.json",
         "InputType": "json",
         "OutputType": "mmdb"
     },
