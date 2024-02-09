@@ -39,8 +39,8 @@ into a consistent format for use in NODS for data items and rules.
 
 #### Add New ETLr Job
 * See config.json for examples of supported input types
-* Look in associated source_<name>.go files to see how they are parsed
-* Copy closest match source_<name>.go to a new name and edit accordingly
+* Look in associated etl/source_<name>.go files to see how they work and parse sources
+* Copy closest match etl/source_<name>.go to a new name and edit accordingly
 * Define data collection items and code up the source parser and meta data creation
 * Disable all entries in config.json except the new entry (or create a new file)
 * Add new source to etl_manager.go under createInstance(source Source)
@@ -53,7 +53,8 @@ into a consistent format for use in NODS for data items and rules.
 * Create a test data set in etlr/etl/test/source/{name}.{type}
 * Edit sources_all_test.go and add your source to TestSources(t *testing.T)
 * Add your source to the etlr/etl/test/config.json file
-* Run the tests again, debug, fix up and ensure 100% coverage of your new source
+* Run the tests again (etl/test.sh), debug if needed (F5 ), fix up and ensure 100% coverage of your new source
+##### Add New Data Source to Nods
 * Configure nods/config.json to include the new source
 * Test your new data items http://localhost:8082/nods/v1/data/ip/{name}/{item}?ip=187.190.197.253
 as found in the data/{name}.json item schema file

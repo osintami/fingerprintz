@@ -8,6 +8,14 @@
         "Separator": " "
     },
     {
+        "Name": "lightswitch.aggressive",
+        "Enabled": true,
+        "File": "./test/source/lightswitch.aggressive.txt",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": " "
+    },
+    {
         "Name": "ayra",
         "Enabled": true,
         "File": "./test/source/ayra.json",

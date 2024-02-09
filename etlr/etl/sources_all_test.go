@@ -174,6 +174,7 @@ func TestSources(t *testing.T) {
 		"useragent",
 		"ayra",
 		"lightswitch.junk",
+		"lightswitch.aggressive",
 	}
 
 	manager := buildETLManager()

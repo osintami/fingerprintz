@@ -11,6 +11,11 @@
             "Enabled": true
         },
         {
+            "Name": "lightswitch.aggressive",
+            "Database": "mmdb",
+            "Enabled": true
+        },
+        {
             "Name": "unwanted",
             "Database": "mmdb",
             "Enabled": true

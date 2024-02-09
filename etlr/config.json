@@ -8,6 +8,14 @@
         "Separator": " "
     },
     {
+        "Name": "lightswitch.agressive",
+        "Enabled": true,
+        "URL": "https://www.github.developerdan.com/hosts/lists/tracking-aggressive-extended.txt",
+        "InputType": "csv",
+        "OutputType": "mmdb",
+        "Separator": " "
+    },
+    {
         "Name": "stripe.webhooks",
         "Enabled": false,
         "URL": "https://stripe.com/files/ips/ips_webhooks.txt",

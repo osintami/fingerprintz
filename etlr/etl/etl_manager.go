@@ -113,6 +113,7 @@ func (x ETLManager) refreshWeekly() {
 	x.Refresh("ip2proxy")
 	x.Refresh("ayra")
 	x.Refresh("lightswitch.junk")
+	x.Refresh("lightswitch.aggressive")
 }
 
 func (x *ETLManager) RefreshAll() {
@@ -167,6 +168,8 @@ func (x *ETLManager) createInstance(source Source) (*ETLJob, error) {
 	switch source.Name {
 	case "lightswitch.junk":
 		transformer = NewLightswitchJunk(writer)
+	case "lightswitch.aggressive":
+		transformer = NewLightswitchAggressive(writer)
 	case "ayra":
 		transformer = NewAyra(writer)
 	case "test":
