@@ -8,7 +8,7 @@
         "Separator": " "
     },
     {
-        "Name": "lightswitch.agressive",
+        "Name": "lightswitch.aggressive",
         "Enabled": true,
         "URL": "https://www.github.developerdan.com/hosts/lists/tracking-aggressive-extended.txt",
         "InputType": "csv",
