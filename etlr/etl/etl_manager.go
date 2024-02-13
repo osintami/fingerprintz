@@ -64,33 +64,43 @@ func (x *ETLManager) ScheduleCronJobs() *cron.Cron {
 
 func (x *ETLManager) refreshHourly() {
 	log.Debug().Str("component", "hourly cron").Msg("cron fired")
+
+	// tor data sources
 	x.Refresh("tormetrics")
 	x.Refresh("onionoo")
 	x.Refresh("danmeuk")
+	x.Refresh("x4bnet.tor")
+
+	// api gateway hackers
 	x.Refresh("unwanted")
 }
 
 func (x ETLManager) refreshDaily() {
 	log.Debug().Str("component", "daily cron").Msg("cron fired")
+
+	// cloud providers
 	x.Refresh("amazon")
+	x.Refresh("akamai")
 	x.Refresh("digitalocean")
 	x.Refresh("cloudflare")
 	x.Refresh("google")
 	x.Refresh("oracle")
+	x.Refresh("azure")
+
 	x.Refresh("abuseipdb")
 	x.Refresh("avastel")
-	x.Refresh("azure")
 	x.Refresh("uhb")
 	x.Refresh("droplist")
 	x.Refresh("edroplist")
 	x.Refresh("ipsum")
 	x.Refresh("dshield")
-	x.Refresh("x4bnet.tor")
 	x.Refresh("x4bnet.vpn")
 	x.Refresh("x4bnet.troll")
 	x.Refresh("fakefilter")
 	x.Refresh("ip1sms")
 	x.Refresh("useragent")
+
+	// udger
 	x.Refresh("udger.bot")
 	x.Refresh("udger.vpn")
 	x.Refresh("udger.proxy")
@@ -166,6 +176,8 @@ func (x *ETLManager) createInstance(source Source) (*ETLJob, error) {
 	}
 
 	switch source.Name {
+	case "akamai":
+		transformer = NewAkamai(writer)
 	case "lightswitch.junk":
 		transformer = NewLightswitchJunk(writer)
 	case "lightswitch.aggressive":

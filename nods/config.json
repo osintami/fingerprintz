@@ -6,6 +6,11 @@
             "Enabled": true
         },
         {
+            "Name": "akamai",
+            "Database": "mmdb",
+            "Enabled": true
+        },
+        {
             "Name": "lightswitch.junk",
             "Database": "mmdb",
             "Enabled": true

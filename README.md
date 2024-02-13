@@ -42,7 +42,7 @@ into a consistent format for use in NODS for data items and rules.
 * Look in associated etl/source_<name>.go files to see how they work and parse sources
 * Copy closest match etl/source_<name>.go to a new name and edit accordingly
 * Define data collection items and code up the source parser and meta data creation
-* Disable all entries in config.json except the new entry (or create a new file)
+* Create a copy of config.json with just your new source in it
 * Add new source to etl_manager.go under createInstance(source Source)
 * Add new source to the appropritate refreshHourly, Daily, Weekly API in server/etl_manager.go
 * Fire up the ETLr in the debugger
@@ -58,6 +58,7 @@ into a consistent format for use in NODS for data items and rules.
 * Configure nods/config.json to include the new source
 * Test your new data items http://localhost:8082/nods/v1/data/ip/{name}/{item}?ip=187.190.197.253
 as found in the data/{name}.json item schema file
+* Merge your config.json with the original
 
 ### Normalized OSINT Data Server
 Written in Go, the NODS uses a URI to access data items, which is all documented in a data dictionary.  Rules
