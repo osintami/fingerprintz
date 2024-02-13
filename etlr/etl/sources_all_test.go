@@ -173,11 +173,9 @@ func TestSources(t *testing.T) {
 		"unwanted",
 		"useragent",
 		"ayra",
-		// TODO:  can't pass the 1.2.3.4 lookup test because these are domains that are resolved
 		"lightswitch.junk",
 		"lightswitch.aggressive",
-		// TODO:  can't pass because it parses two files instead of one
-		//"akamai",
+		"akamai",
 	}
 
 	manager := buildETLManager()

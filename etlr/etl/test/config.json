@@ -16,6 +16,13 @@
         "Separator": " "
     },
     {
+        "Name": "akamai",
+        "Enabled": true,
+        "File": "./test/source/akamai_ipv4_ipv6_CIDRs-txt.zip",
+        "InputType": "zip",
+        "OutputType": "mmdb"
+    },
+    {
         "Name": "ayra",
         "Enabled": true,
         "File": "./test/source/ayra.json",

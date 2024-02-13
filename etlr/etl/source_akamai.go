@@ -20,7 +20,7 @@ func NewAkamai(writer IWriter) ITransform {
 }
 
 func (x *Akamai) Transform(job IETLJob) error {
-	if !strings.HasPrefix(job.Source().URL, "-") && job.Source().File == "" {
+	if !strings.HasPrefix(job.Source().URL, "-") {
 		os.Remove(job.Info().workingPath + "akamai_ipv4_CIDRs.txt")
 		os.Remove(job.Info().workingPath + "akamai_ipv6_CIDRs.txt")
 		os.RemoveAll(job.Info().workingPath + "__MACOSX")

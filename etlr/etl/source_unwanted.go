@@ -57,9 +57,9 @@ func (x *Unwanted) Transform(job IETLJob) error {
 		Type:        common.Boolean.String()}
 
 	job.Tools().Items["unwanted.bot.UserAgent"] = Item{
-		Item:        "ip/unwanted/UserAgent",
+		Item:        "ip/unwanted/userAgent",
 		Enabled:     true,
-		GJSON:       "unwanted.bot.UserAgent",
+		GJSON:       "unwanted.bot.userAgent",
 		Description: "The bots user-agent string.",
 		Type:        common.Date.String()}
 
