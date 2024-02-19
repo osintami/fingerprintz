@@ -36,11 +36,11 @@ func NewETLManager(tools *Toolbox, dataPath string, sources []Source) *ETLManage
 	}
 
 	for _, source := range sources {
-		// if source.Enabled {
-		if job, err := x.createInstance(source); err == nil {
-			x.jobs[source.Name] = job
+		if source.Enabled {
+			if job, err := x.createInstance(source); err == nil {
+				x.jobs[source.Name] = job
+			}
 		}
-		// }
 	}
 
 	return x
