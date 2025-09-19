@@ -5,7 +5,7 @@ the making of this product and curating open source intelligence data and normal
 set of data items and rules.  Use cases include demandgen pipeline, cookie pool data enrichment, identity graphs, 
 fraud detection, real time forum bot detection and prefiltering web traffic.  Any data can be imported or accessed 
 remotely once data items are defined in the data dictionary with an appropriate connector.  CSV, JSON, TXT data can 
-typicallbe imported with zero code changes.
+typically be imported with zero code changes.
 
 ## Architecture
 There are three Go services that make up the OSINTAMI data server.  The OSINTAMI API Gateway, the ETLr,
